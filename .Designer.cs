@@ -41,7 +41,7 @@
             this.header.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.header.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.header.Font = new System.Drawing.Font("Roboto", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.header.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.header.ForeColor = System.Drawing.SystemColors.ControlText;
             this.header.Location = new System.Drawing.Point(1, 36);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(1194, 92);
@@ -94,6 +94,7 @@
             // 
             this.enterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enterButton.Font = new System.Drawing.Font("Roboto Medium", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.enterButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.enterButton.Location = new System.Drawing.Point(455, 401);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(262, 85);
@@ -106,6 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(1196, 574);
             this.Controls.Add(this.enterButton);
             this.Controls.Add(this.passLabel);

@@ -29,7 +29,7 @@ namespace LibrarySQLApp
             }
         }
 
-        public static NpgsqlConnection GetConnection()
+        public static NpgsqlConnection getConnection()
         {
             return conn;
         }
