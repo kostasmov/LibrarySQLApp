@@ -48,13 +48,14 @@ namespace LibrarySQLApp
 
             if (table.Rows.Count > 0)
             {
+                loginField.Text = "";
+                passField.Text = "";
+
                 String role = table.Rows[0]["role"].ToString();
                 int readerID = (int)table.Rows[0]["reader_id"];
 
-                UserForm userForm = new UserForm();
-
                 User user = new User(login, password, role, readerID);
-                userForm.user = user;
+                UserForm userForm = new UserForm(user, this);
 
                 this.Hide();
                 userForm.Show();

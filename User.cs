@@ -15,8 +15,7 @@ namespace LibrarySQLApp
         public string Role { get; set; }
 
         public string ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FullName { get; set; }
         public string GroupCode { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
@@ -40,8 +39,9 @@ namespace LibrarySQLApp
             adapter.Fill(table);
 
             ID = table.Rows[0]["id"].ToString();
-            FirstName = table.Rows[0]["first_name"].ToString();
-            LastName = table.Rows[0]["last_name"].ToString();
+            FullName =
+                table.Rows[0]["first_name"].ToString() + " " + 
+                table.Rows[0]["last_name"].ToString();
             GroupCode = table.Rows[0]["group_code"].ToString();
             Phone = table.Rows[0]["phone"].ToString();
             Email = table.Rows[0]["email"].ToString();

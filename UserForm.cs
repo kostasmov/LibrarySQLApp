@@ -12,14 +12,36 @@ namespace LibrarySQLApp
 {
     public partial class UserForm : Form
     {
-        public User user { get; set; }
+        User user { get; set; }
 
-        public UserForm()
+        private Form PreviousForm;
+
+        public UserForm(User user, Form PreviousForm)
         {
+            this.user = user;
+            this.PreviousForm = PreviousForm;
             InitializeComponent();
+            nameLabel.Text = user.FullName;
         }
 
-        private void UserForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void exitLable_Click(object sender, EventArgs e)
+        {
+            user = null;
+            this.Hide();
+            PreviousForm.Show();
+        }
+
+        private void exitLable_MouseEnter(object sender, EventArgs e)
+        {
+            exitLable.ForeColor = Color.Black;
+        }
+
+        private void exitLable_MouseLeave(object sender, EventArgs e)
+        {
+            exitLable.ForeColor = Color.DimGray;
+        }
+
+        private void UserForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
