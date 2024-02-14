@@ -20,8 +20,11 @@ namespace LibrarySQLApp
         {
             this.user = user;
             this.PreviousForm = PreviousForm;
+
             InitializeComponent();
+
             nameLabel.Text = user.FullName;
+            roleLabel.Text = user.Role;
         }
 
         private void exitLable_Click(object sender, EventArgs e)
