@@ -13,34 +13,19 @@ namespace LibrarySQLApp
     public partial class UserForm : Form
     {
         User User { get; set; }
-        Navigation Navigator { get; set; }
 
         public bool isClosedByCode = false;
 
-        public UserForm(User user, Navigation navigator)
+        public UserForm(User user)
         {
             this.User = user;
-            this.Navigator = navigator;
 
             InitializeComponent();
 
             nameLabel.Text = User.FullName;
-            roleLabel.Text = User.Role;
+            roleLabel.Text = User.Role;            
 
-            if (User.Role == "admin")
-            {
-                int newWidth = booksPageButton.Size.Width - 20;
-                int height = booksPageButton.Size.Height;
-
-                profilePageButton.Size = new Size(newWidth, height);
-                booksPageButton.Size = new Size(newWidth, height);
-                userFormPageButton.Size = new Size(newWidth, height);
-                usersAdminPageButton.Size = new Size(newWidth, height);
-                booksAdminPageButton.Size = new Size(newWidth, height);
-                issuancePageButton.Size = new Size(newWidth, height);
-                reportPageButton.Size = new Size(newWidth, height);
-            }
-            else
+            if (User.Role != "admin")
             {
                 adminPanel.Hide();
             }
@@ -50,8 +35,10 @@ namespace LibrarySQLApp
         {
             isClosedByCode = true;
             User = null;
-            Navigator.CloseUI();
-            Navigator.MainForm.Show();
+            Navigation.CloseUI();
+            Navigation.MainForm.Show();
+
+            Navigation.MainForm.Location = this.Location;
         }
 
         private void exitLable_MouseEnter(object sender, EventArgs e)
@@ -75,13 +62,35 @@ namespace LibrarySQLApp
         private void profilePageButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Navigator.UserForm.Show();
+            Navigation.UserForm.Show();
+            Navigation.UserForm.Location = this.Location;
         }
 
         private void booksPageButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Navigator.BooksForm.Show();
+            Navigation.BooksForm.Show();
+            Navigation.BooksForm.Location = this.Location;
+        }
+
+        private void userFormPageButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usersAdminPageButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void booksAdminPageButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void issuancePageButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

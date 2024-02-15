@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace LibrarySQLApp
 {
-    public class Navigation
+    public static class Navigation
     {
-        public MainForm MainForm { get; set; }
-        public UserForm UserForm { get; set; }
-        public BooksForm BooksForm { get; set; }
-        //
+        public static MainForm MainForm { get; set; }
+        public static UserForm UserForm { get; set; }
+        public static BooksForm BooksForm { get; set; }
 
-        public void CloseUI()
+        public static void CloseUI()
         {
             UserForm.isClosedByCode = true;
             BooksForm.isClosedByCode = true;

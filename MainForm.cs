@@ -19,6 +19,7 @@ namespace LibrarySQLApp
         public MainForm()
         {
             InitializeComponent();
+            Navigation.MainForm = this;
         }
 
         private void enterButton_Click(object sender, EventArgs e)
@@ -54,16 +55,15 @@ namespace LibrarySQLApp
                 String role = table.Rows[0]["role"].ToString();
                 int readerID = (int)table.Rows[0]["reader_id"];
 
-                Navigation navigator = new Navigation();
                 User user = new User(login, password, role, readerID);
 
-                navigator.MainForm = this;
-                navigator.UserForm = new UserForm(user, navigator);
-                navigator.BooksForm = new BooksForm(user, navigator);
+                Navigation.UserForm = new UserForm(user);
+                Navigation.BooksForm = new BooksForm(user);
                 // ЕЩЁ!
 
                 this.Hide();
-                navigator.UserForm.Show();
+                Navigation.UserForm.Show();
+                Navigation.UserForm.Location = this.Location;
             }
             else
                 Messages.DisplayErrorMessage("Неверный логин или пароль.");
