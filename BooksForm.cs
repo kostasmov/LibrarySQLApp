@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace LibrarySQLApp
 {
-    public partial class UserForm : Form
+    public partial class BooksForm : Form
     {
         User User { get; set; }
         Navigation Navigator { get; set; }
 
         public bool isClosedByCode = false;
 
-        public UserForm(User user, Navigation navigator)
+        public BooksForm(User user, Navigation navigator)
         {
             this.User = user;
             this.Navigator = navigator;
@@ -48,10 +48,10 @@ namespace LibrarySQLApp
 
         private void exitLable_Click(object sender, EventArgs e)
         {
+            Navigator.MainForm.Show();
             isClosedByCode = true;
             User = null;
             Navigator.CloseUI();
-            Navigator.MainForm.Show();
         }
 
         private void exitLable_MouseEnter(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace LibrarySQLApp
 
         private void UserForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!this.isClosedByCode)
+            if (!isClosedByCode)
             {
                 Application.Exit();
             }

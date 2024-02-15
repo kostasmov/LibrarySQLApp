@@ -1,6 +1,6 @@
 ﻿namespace LibrarySQLApp
 {
-    partial class UserForm
+    partial class BooksForm
     {
         /// <summary>
         /// Required designer variable.
@@ -246,7 +246,7 @@
             this.userFormPageButton.Text = "Формуляр";
             this.userFormPageButton.UseVisualStyleBackColor = false;
             // 
-            // UserForm
+            // BooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -254,8 +254,8 @@
             this.ClientSize = new System.Drawing.Size(1196, 574);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "UserForm";
-            this.Text = "Профиль пользователя";
+            this.Name = "BooksForm";
+            this.Text = "Библиотека";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

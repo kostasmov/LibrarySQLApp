@@ -59,6 +59,8 @@ namespace LibrarySQLApp
 
                 navigator.MainForm = this;
                 navigator.UserForm = new UserForm(user, navigator);
+                navigator.BooksForm = new BooksForm(user, navigator);
+                // ЕЩЁ!
 
                 this.Hide();
                 navigator.UserForm.Show();
