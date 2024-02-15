@@ -12,21 +12,22 @@ namespace LibrarySQLApp
 {
     public partial class UserForm : Form
     {
-        User user { get; set; }
+        User User { get; set; }
+        Navigation Navigator { get; set; }
 
-        private Form PreviousForm;
+        private bool isClosedByCode = false;
 
-        public UserForm(User user, Form PreviousForm)
+        public UserForm(User user, Navigation navigator)
         {
-            this.user = user;
-            this.PreviousForm = PreviousForm;
+            this.User = user;
+            this.Navigator = navigator;
 
             InitializeComponent();
 
-            nameLabel.Text = user.FullName;
-            roleLabel.Text = user.Role;
+            nameLabel.Text = User.FullName;
+            roleLabel.Text = User.Role;
 
-            if (user.Role == "admin")
+            if (User.Role == "admin")
             {
                 int newWidth = booksPageButton.Size.Width - 20;
                 int height = booksPageButton.Size.Height;
@@ -47,9 +48,10 @@ namespace LibrarySQLApp
 
         private void exitLable_Click(object sender, EventArgs e)
         {
-            user = null;
-            this.Hide();
-            PreviousForm.Show();
+            isClosedByCode = true;
+            User = null;
+            this.Close();
+            Navigator.MainForm.Show();
         }
 
         private void exitLable_MouseEnter(object sender, EventArgs e)
@@ -64,7 +66,10 @@ namespace LibrarySQLApp
 
         private void UserForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            if (!isClosedByCode)
+            {
+                Application.Exit();
+            }
         }
     }
 }

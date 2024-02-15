@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace LibrarySQLApp
 {
-    internal class Navigation
+    public class Navigation
     {
+        public MainForm MainForm { get; set; }
+        public UserForm UserForm { get; set; } 
+        //
     }
 }

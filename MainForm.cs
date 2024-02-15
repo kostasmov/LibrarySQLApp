@@ -54,11 +54,14 @@ namespace LibrarySQLApp
                 String role = table.Rows[0]["role"].ToString();
                 int readerID = (int)table.Rows[0]["reader_id"];
 
+                Navigation navigator = new Navigation();
                 User user = new User(login, password, role, readerID);
-                UserForm userForm = new UserForm(user, this);
+
+                navigator.MainForm = this;
+                navigator.UserForm = new UserForm(user, navigator);
 
                 this.Hide();
-                userForm.Show();
+                navigator.UserForm.Show();
             }
             else
                 Messages.DisplayErrorMessage("Неверный логин или пароль.");
