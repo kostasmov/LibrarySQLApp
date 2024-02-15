@@ -25,6 +25,24 @@ namespace LibrarySQLApp
 
             nameLabel.Text = user.FullName;
             roleLabel.Text = user.Role;
+
+            if (user.Role == "admin")
+            {
+                int newWidth = booksPageButton.Size.Width - 20;
+                int height = booksPageButton.Size.Height;
+
+                profilePageButton.Size = new Size(newWidth, height);
+                booksPageButton.Size = new Size(newWidth, height);
+                userFormPageButton.Size = new Size(newWidth, height);
+                usersAdminPageButton.Size = new Size(newWidth, height);
+                booksAdminPageButton.Size = new Size(newWidth, height);
+                issuancePageButton.Size = new Size(newWidth, height);
+                reportPageButton.Size = new Size(newWidth, height);
+            }
+            else
+            {
+                adminPanel.Hide();
+            }
         }
 
         private void exitLable_Click(object sender, EventArgs e)

@@ -28,24 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.profilePageButton = new System.Windows.Forms.Button();
             this.exitLable = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.roleLabel = new System.Windows.Forms.Label();
+            this.booksPageButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.adminPanel = new System.Windows.Forms.Panel();
+            this.issuancePageButton = new System.Windows.Forms.Button();
+            this.booksAdminPageButton = new System.Windows.Forms.Button();
+            this.usersAdminPageButton = new System.Windows.Forms.Button();
+            this.userFormPageButton = new System.Windows.Forms.Button();
+            this.reportPageButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.adminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // profilePageButton
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 574);
-            this.panel2.TabIndex = 1;
+            this.profilePageButton.AutoSize = true;
+            this.profilePageButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.profilePageButton.FlatAppearance.BorderSize = 0;
+            this.profilePageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profilePageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.profilePageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.profilePageButton.Location = new System.Drawing.Point(12, 17);
+            this.profilePageButton.Name = "profilePageButton";
+            this.profilePageButton.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.profilePageButton.Size = new System.Drawing.Size(300, 60);
+            this.profilePageButton.TabIndex = 2;
+            this.profilePageButton.Text = "Профиль";
+            this.profilePageButton.UseVisualStyleBackColor = false;
             // 
             // exitLable
             // 
@@ -53,7 +70,7 @@
             this.exitLable.AutoSize = true;
             this.exitLable.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitLable.ForeColor = System.Drawing.Color.DimGray;
-            this.exitLable.Location = new System.Drawing.Point(768, 31);
+            this.exitLable.Location = new System.Drawing.Point(783, 31);
             this.exitLable.Name = "exitLable";
             this.exitLable.Size = new System.Drawing.Size(72, 24);
             this.exitLable.TabIndex = 2;
@@ -67,6 +84,7 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.nameLabel.Location = new System.Drawing.Point(3, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(279, 34);
@@ -79,9 +97,9 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.exitLable);
-            this.panel1.Location = new System.Drawing.Point(333, 0);
+            this.panel1.Location = new System.Drawing.Point(318, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(863, 81);
+            this.panel1.Size = new System.Drawing.Size(878, 81);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -90,10 +108,10 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.flowLayoutPanel1.Controls.Add(this.nameLabel);
             this.flowLayoutPanel1.Controls.Add(this.roleLabel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 26);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(27, 26);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(753, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(750, 32);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // roleLabel
@@ -101,7 +119,7 @@
             this.roleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.roleLabel.AutoSize = true;
             this.roleLabel.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roleLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.roleLabel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.roleLabel.Location = new System.Drawing.Point(288, 0);
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(55, 34);
@@ -109,30 +127,160 @@
             this.roleLabel.Text = "роль";
             this.roleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // booksPageButton
+            // 
+            this.booksPageButton.AutoSize = true;
+            this.booksPageButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.booksPageButton.FlatAppearance.BorderSize = 0;
+            this.booksPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.booksPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.booksPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.booksPageButton.Location = new System.Drawing.Point(12, 106);
+            this.booksPageButton.Name = "booksPageButton";
+            this.booksPageButton.Size = new System.Drawing.Size(300, 60);
+            this.booksPageButton.TabIndex = 2;
+            this.booksPageButton.Text = "Библиотека";
+            this.booksPageButton.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.AutoScrollMinSize = new System.Drawing.Size(0, 100);
+            this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel2.Controls.Add(this.adminPanel);
+            this.panel2.Controls.Add(this.userFormPageButton);
+            this.panel2.Controls.Add(this.profilePageButton);
+            this.panel2.Controls.Add(this.booksPageButton);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(322, 574);
+            this.panel2.TabIndex = 1;
+            // 
+            // adminPanel
+            // 
+            this.adminPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.adminPanel.Controls.Add(this.reportPageButton);
+            this.adminPanel.Controls.Add(this.issuancePageButton);
+            this.adminPanel.Controls.Add(this.booksAdminPageButton);
+            this.adminPanel.Controls.Add(this.usersAdminPageButton);
+            this.adminPanel.Location = new System.Drawing.Point(0, 269);
+            this.adminPanel.Name = "adminPanel";
+            this.adminPanel.Size = new System.Drawing.Size(322, 358);
+            this.adminPanel.TabIndex = 5;
+            // 
+            // issuancePageButton
+            // 
+            this.issuancePageButton.AutoSize = true;
+            this.issuancePageButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.issuancePageButton.FlatAppearance.BorderSize = 0;
+            this.issuancePageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.issuancePageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.issuancePageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.issuancePageButton.Location = new System.Drawing.Point(12, 194);
+            this.issuancePageButton.Name = "issuancePageButton";
+            this.issuancePageButton.Size = new System.Drawing.Size(300, 60);
+            this.issuancePageButton.TabIndex = 6;
+            this.issuancePageButton.Text = "Выдачи";
+            this.issuancePageButton.UseVisualStyleBackColor = false;
+            // 
+            // booksAdminPageButton
+            // 
+            this.booksAdminPageButton.AutoSize = true;
+            this.booksAdminPageButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.booksAdminPageButton.FlatAppearance.BorderSize = 0;
+            this.booksAdminPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.booksAdminPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.booksAdminPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.booksAdminPageButton.Location = new System.Drawing.Point(12, 104);
+            this.booksAdminPageButton.Name = "booksAdminPageButton";
+            this.booksAdminPageButton.Size = new System.Drawing.Size(300, 60);
+            this.booksAdminPageButton.TabIndex = 5;
+            this.booksAdminPageButton.Text = "Книги";
+            this.booksAdminPageButton.UseVisualStyleBackColor = false;
+            // 
+            // usersAdminPageButton
+            // 
+            this.usersAdminPageButton.AutoSize = true;
+            this.usersAdminPageButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.usersAdminPageButton.FlatAppearance.BorderSize = 0;
+            this.usersAdminPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usersAdminPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.usersAdminPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.usersAdminPageButton.Location = new System.Drawing.Point(12, 16);
+            this.usersAdminPageButton.Name = "usersAdminPageButton";
+            this.usersAdminPageButton.Size = new System.Drawing.Size(300, 60);
+            this.usersAdminPageButton.TabIndex = 4;
+            this.usersAdminPageButton.Text = "Пользователи";
+            this.usersAdminPageButton.UseVisualStyleBackColor = false;
+            // 
+            // userFormPageButton
+            // 
+            this.userFormPageButton.AutoSize = true;
+            this.userFormPageButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.userFormPageButton.FlatAppearance.BorderSize = 0;
+            this.userFormPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userFormPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userFormPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.userFormPageButton.Location = new System.Drawing.Point(12, 193);
+            this.userFormPageButton.Name = "userFormPageButton";
+            this.userFormPageButton.Size = new System.Drawing.Size(300, 60);
+            this.userFormPageButton.TabIndex = 3;
+            this.userFormPageButton.Text = "Формуляр";
+            this.userFormPageButton.UseVisualStyleBackColor = false;
+            // 
+            // reportPageButton
+            // 
+            this.reportPageButton.AutoSize = true;
+            this.reportPageButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.reportPageButton.FlatAppearance.BorderSize = 0;
+            this.reportPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.reportPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.reportPageButton.Location = new System.Drawing.Point(12, 282);
+            this.reportPageButton.Name = "reportPageButton";
+            this.reportPageButton.Size = new System.Drawing.Size(300, 60);
+            this.reportPageButton.TabIndex = 7;
+            this.reportPageButton.Text = "Отчёты";
+            this.reportPageButton.UseVisualStyleBackColor = false;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1196, 574);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "UserForm";
-            this.Text = "Личный кабинет";
+            this.Text = "Профиль пользователя";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.adminPanel.ResumeLayout(false);
+            this.adminPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label exitLable;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label roleLabel;
+        private System.Windows.Forms.Button profilePageButton;
+        private System.Windows.Forms.Button booksPageButton;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button usersAdminPageButton;
+        private System.Windows.Forms.Button userFormPageButton;
+        private System.Windows.Forms.Panel adminPanel;
+        private System.Windows.Forms.Button booksAdminPageButton;
+        private System.Windows.Forms.Button issuancePageButton;
+        private System.Windows.Forms.Button reportPageButton;
     }
 }
