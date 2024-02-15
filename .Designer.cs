@@ -46,9 +46,9 @@
             this.header.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.header.Font = new System.Drawing.Font("Roboto", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.header.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.header.Location = new System.Drawing.Point(1, 54);
+            this.header.Location = new System.Drawing.Point(2, 88);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(826, 69);
+            this.header.Size = new System.Drawing.Size(1112, 69);
             this.header.TabIndex = 0;
             this.header.Text = "Авторизация";
             this.header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,9 +111,9 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(0, 158);
+            this.panel1.Location = new System.Drawing.Point(1, 206);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(827, 359);
+            this.panel1.Size = new System.Drawing.Size(1113, 359);
             this.panel1.TabIndex = 6;
             // 
             // panel2
@@ -124,7 +124,7 @@
             this.panel2.Controls.Add(this.passField);
             this.panel2.Controls.Add(this.passLabel);
             this.panel2.Controls.Add(this.loginLabel);
-            this.panel2.Location = new System.Drawing.Point(165, 0);
+            this.panel2.Location = new System.Drawing.Point(308, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(476, 359);
             this.panel2.TabIndex = 7;
@@ -135,7 +135,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(828, 594);
+            this.ClientSize = new System.Drawing.Size(1114, 649);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.header);
             this.Name = "MainForm";

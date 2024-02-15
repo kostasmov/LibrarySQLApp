@@ -115,6 +115,30 @@
     <Compile Include="BooksForm.Designer.cs">
       <DependentUpon>BooksForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsersAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersAdminForm.Designer.cs">
+      <DependentUpon>UsersAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BooksAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BooksAdminForm.Designer.cs">
+      <DependentUpon>BooksAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IssuanceAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssuanceAdminForm.Designer.cs">
+      <DependentUpon>IssuanceAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserStoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserStoryForm.Designer.cs">
+      <DependentUpon>UserStoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +160,18 @@
     </Compile>
     <EmbeddedResource Include="BooksForm.resx">
       <DependentUpon>BooksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersAdminForm.resx">
+      <DependentUpon>UsersAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BooksAdminForm.resx">
+      <DependentUpon>BooksAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssuanceAdminForm.resx">
+      <DependentUpon>IssuanceAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserStoryForm.resx">
+      <DependentUpon>UserStoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>

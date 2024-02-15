@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace LibrarySQLApp
 {
-    public partial class BooksForm : Form
+    public partial class BooksAdminForm : Form
     {
         User User { get; set; }
 
         public bool isClosedByCode = false;
 
-        public BooksForm(User user)
+        public BooksAdminForm(User user)
         {
             this.User = user;
 
             InitializeComponent();
 
             nameLabel.Text = User.FullName;
-            roleLabel.Text = User.Role;
+            roleLabel.Text = User.Role;            
 
             if (User.Role != "admin")
             {
@@ -36,7 +36,7 @@ namespace LibrarySQLApp
             isClosedByCode = true;
             Navigation.CloseUI();
             if (User.Role == "admin") Navigation.CloseAdmin();
-
+            
             Navigation.MainForm.Show();
             Navigation.MainForm.Location = this.Location;
         }
@@ -53,7 +53,7 @@ namespace LibrarySQLApp
 
         private void UserForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!isClosedByCode)
+            if (!this.isClosedByCode)
             {
                 Application.Exit();
             }
@@ -99,13 +99,6 @@ namespace LibrarySQLApp
             this.Hide();
             Navigation.IssuanceAdminForm.Show();
             Navigation.IssuanceAdminForm.Location = this.Location;
-        }
-
-        private void reportPageButton_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-            //Navigation.UserStoryForm.Show();
-            //Navigation.UserStoryForm.Location = this.Location;
         }
     }
 }

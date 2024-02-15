@@ -1,6 +1,6 @@
 ﻿namespace LibrarySQLApp
 {
-    partial class UserForm
+    partial class BooksAdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -256,7 +256,7 @@
             this.userStoryPageButton.UseVisualStyleBackColor = false;
             this.userStoryPageButton.Click += new System.EventHandler(this.userStoryPageButton_Click);
             // 
-            // UserForm
+            // BooksAdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -265,8 +265,8 @@
             this.ClientSize = new System.Drawing.Size(1178, 624);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.panel1);
-            this.Name = "UserForm";
-            this.Text = "Профиль пользователя";
+            this.Name = "BooksAdminForm";
+            this.Text = "Управление книгами";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -59,7 +59,14 @@ namespace LibrarySQLApp
 
                 Navigation.UserForm = new UserForm(user);
                 Navigation.BooksForm = new BooksForm(user);
-                // ЕЩЁ!
+                Navigation.UserStoryForm = new UserStoryForm(user);
+
+                if (role == "admin")
+                {
+                    Navigation.UsersAdminForm = new UsersAdminForm(user);
+                    Navigation.BooksAdminForm = new BooksAdminForm(user);
+                    Navigation.IssuanceAdminForm = new IssuanceAdminForm(user);
+                }
 
                 this.Hide();
                 Navigation.UserForm.Show();

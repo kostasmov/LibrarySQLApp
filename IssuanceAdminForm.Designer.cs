@@ -1,6 +1,6 @@
 ﻿namespace LibrarySQLApp
 {
-    partial class UserForm
+    partial class IssuanceAdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -188,6 +188,7 @@
             this.reportPageButton.TabIndex = 7;
             this.reportPageButton.Text = "Отчёты";
             this.reportPageButton.UseVisualStyleBackColor = false;
+            this.reportPageButton.Click += new System.EventHandler(this.reportPageButton_Click);
             // 
             // issuancePageButton
             // 
@@ -256,7 +257,7 @@
             this.userStoryPageButton.UseVisualStyleBackColor = false;
             this.userStoryPageButton.Click += new System.EventHandler(this.userStoryPageButton_Click);
             // 
-            // UserForm
+            // IssuanceAdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -265,8 +266,8 @@
             this.ClientSize = new System.Drawing.Size(1178, 624);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.panel1);
-            this.Name = "UserForm";
-            this.Text = "Профиль пользователя";
+            this.Name = "IssuanceAdminForm";
+            this.Text = "Управление выдачей";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

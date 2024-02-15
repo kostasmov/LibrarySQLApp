@@ -41,7 +41,7 @@
             this.issuancePageButton = new System.Windows.Forms.Button();
             this.booksAdminPageButton = new System.Windows.Forms.Button();
             this.usersAdminPageButton = new System.Windows.Forms.Button();
-            this.userFormPageButton = new System.Windows.Forms.Button();
+            this.userStoryPageButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
@@ -113,7 +113,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(27, 26);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(354, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(371, 32);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // roleLabel
@@ -151,27 +151,26 @@
             this.NavigationPanel.AutoScrollMinSize = new System.Drawing.Size(0, 100);
             this.NavigationPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.NavigationPanel.Controls.Add(this.adminPanel);
-            this.NavigationPanel.Controls.Add(this.userFormPageButton);
+            this.NavigationPanel.Controls.Add(this.userStoryPageButton);
             this.NavigationPanel.Controls.Add(this.profilePageButton);
             this.NavigationPanel.Controls.Add(this.booksPageButton);
             this.NavigationPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.NavigationPanel.Location = new System.Drawing.Point(0, 0);
             this.NavigationPanel.Name = "NavigationPanel";
-            this.NavigationPanel.Size = new System.Drawing.Size(322, 644);
+            this.NavigationPanel.Size = new System.Drawing.Size(322, 624);
             this.NavigationPanel.TabIndex = 1;
             // 
             // adminPanel
             // 
-            this.adminPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.adminPanel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.adminPanel.Controls.Add(this.reportPageButton);
             this.adminPanel.Controls.Add(this.issuancePageButton);
             this.adminPanel.Controls.Add(this.booksAdminPageButton);
             this.adminPanel.Controls.Add(this.usersAdminPageButton);
-            this.adminPanel.Location = new System.Drawing.Point(0, 271);
+            this.adminPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.adminPanel.Location = new System.Drawing.Point(0, 268);
             this.adminPanel.Name = "adminPanel";
-            this.adminPanel.Size = new System.Drawing.Size(322, 373);
+            this.adminPanel.Size = new System.Drawing.Size(322, 356);
             this.adminPanel.TabIndex = 5;
             // 
             // reportPageButton
@@ -238,21 +237,21 @@
             this.usersAdminPageButton.UseVisualStyleBackColor = false;
             this.usersAdminPageButton.Click += new System.EventHandler(this.usersAdminPageButton_Click);
             // 
-            // userFormPageButton
+            // userStoryPageButton
             // 
-            this.userFormPageButton.AutoSize = true;
-            this.userFormPageButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.userFormPageButton.FlatAppearance.BorderSize = 0;
-            this.userFormPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userFormPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userFormPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.userFormPageButton.Location = new System.Drawing.Point(12, 193);
-            this.userFormPageButton.Name = "userFormPageButton";
-            this.userFormPageButton.Size = new System.Drawing.Size(300, 60);
-            this.userFormPageButton.TabIndex = 3;
-            this.userFormPageButton.Text = "Формуляр";
-            this.userFormPageButton.UseVisualStyleBackColor = false;
-            this.userFormPageButton.Click += new System.EventHandler(this.userFormPageButton_Click);
+            this.userStoryPageButton.AutoSize = true;
+            this.userStoryPageButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.userStoryPageButton.FlatAppearance.BorderSize = 0;
+            this.userStoryPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userStoryPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userStoryPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.userStoryPageButton.Location = new System.Drawing.Point(12, 193);
+            this.userStoryPageButton.Name = "userStoryPageButton";
+            this.userStoryPageButton.Size = new System.Drawing.Size(300, 60);
+            this.userStoryPageButton.TabIndex = 3;
+            this.userStoryPageButton.Text = "Формуляр";
+            this.userStoryPageButton.UseVisualStyleBackColor = false;
+            this.userStoryPageButton.Click += new System.EventHandler(this.userStoryPageButton_Click);
             // 
             // BooksForm
             // 
@@ -260,7 +259,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1178, 644);
+            this.ClientSize = new System.Drawing.Size(1178, 624);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.panel1);
             this.Name = "BooksForm";
@@ -288,7 +287,7 @@
         private System.Windows.Forms.Button booksPageButton;
         private System.Windows.Forms.Panel NavigationPanel;
         private System.Windows.Forms.Button usersAdminPageButton;
-        private System.Windows.Forms.Button userFormPageButton;
+        private System.Windows.Forms.Button userStoryPageButton;
         private System.Windows.Forms.Panel adminPanel;
         private System.Windows.Forms.Button booksAdminPageButton;
         private System.Windows.Forms.Button issuancePageButton;

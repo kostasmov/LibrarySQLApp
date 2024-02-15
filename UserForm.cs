@@ -34,10 +34,10 @@ namespace LibrarySQLApp
         private void exitLable_Click(object sender, EventArgs e)
         {
             isClosedByCode = true;
-            User = null;
             Navigation.CloseUI();
-            Navigation.MainForm.Show();
+            if (User.Role == "admin") Navigation.CloseAdmin();
 
+            Navigation.MainForm.Show();
             Navigation.MainForm.Location = this.Location;
         }
 
@@ -73,24 +73,32 @@ namespace LibrarySQLApp
             Navigation.BooksForm.Location = this.Location;
         }
 
-        private void userFormPageButton_Click(object sender, EventArgs e)
+        private void userStoryPageButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Navigation.UserStoryForm.Show();
+            Navigation.UserStoryForm.Location = this.Location;
         }
 
         private void usersAdminPageButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Navigation.UsersAdminForm.Show();
+            Navigation.UsersAdminForm.Location = this.Location;
         }
 
         private void booksAdminPageButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Navigation.BooksAdminForm.Show();
+            Navigation.BooksAdminForm.Location = this.Location;
         }
 
         private void issuancePageButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Navigation.IssuanceAdminForm.Show();
+            Navigation.IssuanceAdminForm.Location = this.Location;
         }
     }
 }
