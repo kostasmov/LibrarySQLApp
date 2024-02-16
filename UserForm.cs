@@ -109,27 +109,41 @@ namespace LibrarySQLApp
             Navigation.IssuanceAdminForm.Location = this.Location;
         }
 
+        private void checkSaveButtonEnability()
+        {
+            if (loginTextBox.Text != User.Login || 
+                emailTextBox.Text != User.Email || 
+                phoneTextBox.Text != User.Phone)
+            {
+                SaveButton.Enabled = true;
+                SaveButton.BackColor = SystemColors.HotTrack;
+            }
+            else
+            {
+                SaveButton.Enabled = false;
+                SaveButton.BackColor = Color.LightGray;
+            }
+            
+
+        }
+
         private void loginTextBox_TextChanged(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(loginTextBox.Text, @"^[A-Za-z0-9_]+$") || loginTextBox.Text == "")
             {
                 loginTextBox.ForeColor = Color.Red;
+                SaveButton.Enabled = false;
+                SaveButton.BackColor = Color.LightGray;
             }
             else if (loginTextBox.Text != User.Login)
             {
-                SaveButton.Enabled = true;
-                SaveButton.BackColor = SystemColors.HotTrack;
                 loginTextBox.ForeColor = SystemColors.Highlight;
+                checkSaveButtonEnability();
             }
             else
             {
                 loginTextBox.ForeColor = Color.Gray;
-                if (emailTextBox.Text == User.Email && phoneTextBox.Text == User.Phone)
-                {
-                    SaveButton.Enabled = false;
-                    SaveButton.BackColor = Color.LightGray;
-                }
-
+                checkSaveButtonEnability();
             }
         }
 
@@ -138,22 +152,18 @@ namespace LibrarySQLApp
             if (!Regex.IsMatch(emailTextBox.Text, @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"))
             {
                 emailTextBox.ForeColor = Color.Red;
+                SaveButton.Enabled = false;
+                SaveButton.BackColor = Color.LightGray;
             }
             else if (emailTextBox.Text != User.Email)
             {
-                SaveButton.Enabled = true;
-                SaveButton.BackColor = SystemColors.HotTrack;
                 emailTextBox.ForeColor = SystemColors.Highlight;
+                checkSaveButtonEnability();
             }
             else
             {
                 emailTextBox.ForeColor = Color.Gray;
-                if (loginTextBox.Text == User.Login && phoneTextBox.Text == User.Phone)
-                {
-                    SaveButton.Enabled = false;
-                    SaveButton.BackColor = Color.LightGray;
-                }
-
+                checkSaveButtonEnability();
             }
         }
 
@@ -162,22 +172,18 @@ namespace LibrarySQLApp
             if (!Regex.IsMatch(phoneTextBox.Text, @"^\+[0-9]{11,11}$"))
             {
                 phoneTextBox.ForeColor = Color.Red;
+                SaveButton.Enabled = false;
+                SaveButton.BackColor = Color.LightGray;
             }
             else if (phoneTextBox.Text != User.Phone)
             {
-                SaveButton.Enabled = true;
-                SaveButton.BackColor = SystemColors.HotTrack;
                 phoneTextBox.ForeColor = SystemColors.Highlight;
+                checkSaveButtonEnability();
             }
             else
             {
                 phoneTextBox.ForeColor = Color.Gray;
-                if (emailTextBox.Text == User.Email && loginTextBox.Text == User.Login)
-                {
-                    SaveButton.Enabled = false;
-                    SaveButton.BackColor = Color.LightGray;
-                }
-
+                checkSaveButtonEnability();
             }
         }
 
@@ -225,7 +231,17 @@ namespace LibrarySQLApp
                 command.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("Транзакция успешно завершена.");
+                Messages.DisplayInfoMessage("Данные сохранены.");
+
+                SaveButton.Enabled = false;
+                SaveButton.BackColor = Color.LightGray;
+                loginTextBox.ForeColor = Color.Gray;
+                emailTextBox.ForeColor = Color.Gray;
+                phoneTextBox.ForeColor = Color.Gray;
+
+                User.Login = login;
+                User.Email = email;
+                User.Phone = phone;
             }
             catch (Exception ex)
             {
