@@ -14,7 +14,7 @@ namespace LibrarySQLApp
         public string Password { get; set; }
         public string Role { get; set; }
 
-        public string ID { get; set; }
+        public int ID { get; set; }
         public string FullName { get; set; }
         public string GroupCode { get; set; }
         public string Phone { get; set; }
@@ -38,7 +38,7 @@ namespace LibrarySQLApp
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            ID = table.Rows[0]["id"].ToString();
+            ID = (int)table.Rows[0]["id"];
             FullName =
                 table.Rows[0]["first_name"].ToString() + " " + 
                 table.Rows[0]["last_name"].ToString();
