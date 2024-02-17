@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace LibrarySQLApp
 {
@@ -187,9 +188,74 @@ namespace LibrarySQLApp
             }
         }
 
+        private void newPassTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (oldPassTextBox.Text != "" && newPassTextBox.Text != "")
+            {
+                PassChangeButton.Enabled = true;
+                PassChangeButton.BackColor = SystemColors.HotTrack;
+            }
+            else
+            {
+                PassChangeButton.Enabled = false;
+                PassChangeButton.BackColor = Color.LightGray;
+            }
+        }
+
+        private void oldPassTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (oldPassTextBox.Text != "" && newPassTextBox.Text != "")
+            {
+                PassChangeButton.Enabled = true;
+                PassChangeButton.BackColor = SystemColors.HotTrack;
+            }
+            else
+            {
+                PassChangeButton.Enabled = false;
+                PassChangeButton.BackColor = Color.LightGray;
+            }
+        }
+
         private void PassChangeButton_Click(object sender, EventArgs e)
         {
+            if (oldPassTextBox.Text == User.Password)
+            {
+                String query = 
+                    "update accounts " + 
+                    "set password=@password " + 
+                    "where reader_id=@id;";
 
+                try
+                {
+                    DB.openConnection();
+
+                    NpgsqlCommand command = new NpgsqlCommand(query, DB.getConnection());
+
+                    command.Parameters.AddWithValue("@id", User.ID);
+                    command.Parameters.AddWithValue("@password", newPassTextBox.Text);
+                    command.ExecuteNonQuery();
+
+                    Messages.DisplayInfoMessage("Пароль успешно изменён");
+                    DB.closeConnection();
+
+                    PassChangeButton.Enabled = false;
+                    PassChangeButton.BackColor = Color.LightGray;
+                    newPassTextBox.Text = "";
+                    oldPassTextBox.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    Messages.DisplayErrorMessage($"Ошибка: {ex.Message}");
+                }
+                finally
+                {
+                    DB.closeConnection();
+                }
+            }
+            else
+            {
+                Messages.DisplayErrorMessage("Неверный пароль");
+            }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -249,7 +315,7 @@ namespace LibrarySQLApp
                 {
                     transaction.Rollback();
                 }
-                Messages.DisplayErrorMessage($"Произошла ошибка: {ex.Message}");
+                Messages.DisplayErrorMessage($"Ошибка: {ex.Message}");
             }
             finally
             {

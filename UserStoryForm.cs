@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,60 @@ namespace LibrarySQLApp
             {
                 adminPanel.Hide();
             }
+
+            CreateGridView();
+            LoadGridView();
+        }
+
+        private void CreateGridView()
+        {
+            MainGridView.Columns.Add("title", "Книга");
+            MainGridView.Columns.Add("author", "Автор");
+            MainGridView.Columns.Add("book_date", "Дата выдачи");
+            MainGridView.Columns.Add("return_date", "Дата возврата");
+            MainGridView.Columns.Add("status", "Состояние");
+        }
+
+        private void FillGridRow(DataGridView dgv, IDataRecord record)
+        {
+            dgv.Rows.Add(
+                record.GetString(0),
+                record.GetString(1) + " " + record.GetString(2),
+                record.IsDBNull(3) ? string.Empty : record.GetDateTime(3).Date.ToString("d"),
+                record.IsDBNull(4) ? string.Empty : record.GetDateTime(4).Date.ToString("d"),
+                record.GetString(5));
+        }
+
+        private void LoadGridView()
+        {
+            MainGridView.Rows.Clear();
+
+            DataTable dataTable = new DataTable();
+
+            string query = "" +
+                "SELECT books.title, authors.first_name, authors.last_name, " +
+                "iss.book_date, iss.return_date, iss.status " +
+                "FROM issuance as iss " +
+                "join books on iss.book_id = books.id " +
+                "join book_author as ba on ba.book_id = books.id " +
+                "join authors on authors.id = ba.author_id " +
+                "where reader_id=@id;";
+
+            DB.openConnection();
+
+            NpgsqlCommand command = new NpgsqlCommand(query, DB.getConnection());
+            command.Parameters.AddWithValue("@id", User.ID);
+
+            NpgsqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                FillGridRow(MainGridView, reader);
+            }
+
+            DB.closeConnection();
+
+            MainGridView.Sort(MainGridView.Columns["book_date"], ListSortDirection.Ascending);
         }
 
         private void exitLable_Click(object sender, EventArgs e)

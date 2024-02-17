@@ -42,10 +42,12 @@
             this.booksAdminPageButton = new System.Windows.Forms.Button();
             this.usersAdminPageButton = new System.Windows.Forms.Button();
             this.userStoryPageButton = new System.Windows.Forms.Button();
+            this.MainGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
             this.adminPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // profilePageButton
@@ -257,6 +259,19 @@
             this.userStoryPageButton.UseVisualStyleBackColor = false;
             this.userStoryPageButton.Click += new System.EventHandler(this.userStoryPageButton_Click);
             // 
+            // MainGridView
+            // 
+            this.MainGridView.AllowUserToAddRows = false;
+            this.MainGridView.AllowUserToDeleteRows = false;
+            this.MainGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MainGridView.Location = new System.Drawing.Point(345, 106);
+            this.MainGridView.Name = "MainGridView";
+            this.MainGridView.ReadOnly = true;
+            this.MainGridView.RowHeadersWidth = 62;
+            this.MainGridView.RowTemplate.Height = 28;
+            this.MainGridView.Size = new System.Drawing.Size(810, 500);
+            this.MainGridView.TabIndex = 2;
+            // 
             // UserStoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -264,6 +279,7 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1178, 624);
+            this.Controls.Add(this.MainGridView);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.panel1);
             this.Name = "UserStoryForm";
@@ -277,6 +293,7 @@
             this.NavigationPanel.PerformLayout();
             this.adminPanel.ResumeLayout(false);
             this.adminPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,5 +313,6 @@
         private System.Windows.Forms.Button booksAdminPageButton;
         private System.Windows.Forms.Button issuancePageButton;
         private System.Windows.Forms.Button reportPageButton;
+        private System.Windows.Forms.DataGridView MainGridView;
     }
 }

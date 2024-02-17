@@ -52,6 +52,10 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.PassChangeButton = new System.Windows.Forms.Button();
             this.groupLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.newPassTextBox = new System.Windows.Forms.TextBox();
+            this.oldPassTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
@@ -66,7 +70,7 @@
             this.profilePageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profilePageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.profilePageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.profilePageButton.Location = new System.Drawing.Point(12, 17);
+            this.profilePageButton.Location = new System.Drawing.Point(7, 13);
             this.profilePageButton.Name = "profilePageButton";
             this.profilePageButton.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.profilePageButton.Size = new System.Drawing.Size(300, 60);
@@ -334,7 +338,7 @@
             this.phoneTextBox.Location = new System.Drawing.Point(907, 159);
             this.phoneTextBox.MaxLength = 12;
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(232, 25);
+            this.phoneTextBox.Size = new System.Drawing.Size(239, 25);
             this.phoneTextBox.TabIndex = 11;
             this.phoneTextBox.TextChanged += new System.EventHandler(this.phoneTextBox_TextChanged);
             // 
@@ -368,11 +372,12 @@
             // PassChangeButton
             // 
             this.PassChangeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PassChangeButton.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.PassChangeButton.BackColor = System.Drawing.Color.LightGray;
+            this.PassChangeButton.Enabled = false;
             this.PassChangeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PassChangeButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PassChangeButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.PassChangeButton.Location = new System.Drawing.Point(647, 536);
+            this.PassChangeButton.Location = new System.Drawing.Point(637, 534);
             this.PassChangeButton.Name = "PassChangeButton";
             this.PassChangeButton.Size = new System.Drawing.Size(239, 57);
             this.PassChangeButton.TabIndex = 15;
@@ -391,6 +396,56 @@
             this.groupLabel.TabIndex = 13;
             this.groupLabel.Text = "UserGroup";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(364, 321);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(198, 29);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Новый пароль:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(364, 399);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(209, 29);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Старый пароль:";
+            // 
+            // newPassTextBox
+            // 
+            this.newPassTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.newPassTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.newPassTextBox.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.newPassTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.newPassTextBox.Location = new System.Drawing.Point(593, 321);
+            this.newPassTextBox.MaxLength = 20;
+            this.newPassTextBox.Name = "newPassTextBox";
+            this.newPassTextBox.Size = new System.Drawing.Size(239, 32);
+            this.newPassTextBox.TabIndex = 18;
+            this.newPassTextBox.UseSystemPasswordChar = true;
+            this.newPassTextBox.TextChanged += new System.EventHandler(this.newPassTextBox_TextChanged);
+            // 
+            // oldPassTextBox
+            // 
+            this.oldPassTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.oldPassTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.oldPassTextBox.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.oldPassTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.oldPassTextBox.Location = new System.Drawing.Point(593, 399);
+            this.oldPassTextBox.MaxLength = 20;
+            this.oldPassTextBox.Name = "oldPassTextBox";
+            this.oldPassTextBox.Size = new System.Drawing.Size(239, 32);
+            this.oldPassTextBox.TabIndex = 19;
+            this.oldPassTextBox.UseSystemPasswordChar = true;
+            this.oldPassTextBox.TextChanged += new System.EventHandler(this.oldPassTextBox_TextChanged);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -398,6 +453,10 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1178, 624);
+            this.Controls.Add(this.oldPassTextBox);
+            this.Controls.Add(this.newPassTextBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.PassChangeButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.groupLabel);
@@ -451,5 +510,9 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button PassChangeButton;
         private System.Windows.Forms.Label groupLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox newPassTextBox;
+        private System.Windows.Forms.TextBox oldPassTextBox;
     }
 }
