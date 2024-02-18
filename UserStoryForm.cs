@@ -103,6 +103,14 @@ namespace LibrarySQLApp
             DB.closeConnection();
 
             MainGridView.Sort(MainGridView.Columns["book_date"], ListSortDirection.Ascending);
+
+            foreach (DataGridViewColumn column in MainGridView.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            }
+
+            MainGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void exitLable_Click(object sender, EventArgs e)

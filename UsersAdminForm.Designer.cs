@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersAdminForm));
             this.profilePageButton = new System.Windows.Forms.Button();
             this.exitLable = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -42,10 +46,16 @@
             this.booksAdminPageButton = new System.Windows.Forms.Button();
             this.usersAdminPageButton = new System.Windows.Forms.Button();
             this.userStoryPageButton = new System.Windows.Forms.Button();
+            this.MainGridView = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SearchBox = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
             this.adminPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // profilePageButton
@@ -71,7 +81,7 @@
             this.exitLable.AutoSize = true;
             this.exitLable.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitLable.ForeColor = System.Drawing.Color.DimGray;
-            this.exitLable.Location = new System.Drawing.Point(765, 31);
+            this.exitLable.Location = new System.Drawing.Point(809, 31);
             this.exitLable.Name = "exitLable";
             this.exitLable.Size = new System.Drawing.Size(72, 24);
             this.exitLable.TabIndex = 2;
@@ -102,7 +112,7 @@
             this.panel1.Controls.Add(this.exitLable);
             this.panel1.Location = new System.Drawing.Point(318, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(860, 81);
+            this.panel1.Size = new System.Drawing.Size(904, 81);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -257,15 +267,92 @@
             this.userStoryPageButton.UseVisualStyleBackColor = false;
             this.userStoryPageButton.Click += new System.EventHandler(this.userStoryPageButton_Click);
             // 
+            // MainGridView
+            // 
+            this.MainGridView.AllowUserToAddRows = false;
+            this.MainGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.MainGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.MainGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.MainGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MainGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.MainGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MainGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            this.MainGridView.Location = new System.Drawing.Point(345, 166);
+            this.MainGridView.Name = "MainGridView";
+            this.MainGridView.ReadOnly = true;
+            this.MainGridView.RowHeadersWidth = 62;
+            this.MainGridView.RowTemplate.Height = 28;
+            this.MainGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.MainGridView.Size = new System.Drawing.Size(854, 440);
+            this.MainGridView.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(946, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(253, 36);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Добавить читателя";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SearchBox.Location = new System.Drawing.Point(389, 106);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(238, 36);
+            this.SearchBox.TabIndex = 9;
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(345, 106);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // UsersAdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1178, 624);
+            this.ClientSize = new System.Drawing.Size(1222, 624);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.SearchBox);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.MainGridView);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "UsersAdminForm";
             this.Text = "Управление пользователями";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
@@ -277,7 +364,10 @@
             this.NavigationPanel.PerformLayout();
             this.adminPanel.ResumeLayout(false);
             this.adminPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -296,5 +386,9 @@
         private System.Windows.Forms.Button booksAdminPageButton;
         private System.Windows.Forms.Button issuancePageButton;
         private System.Windows.Forms.Button reportPageButton;
+        private System.Windows.Forms.DataGridView MainGridView;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox SearchBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

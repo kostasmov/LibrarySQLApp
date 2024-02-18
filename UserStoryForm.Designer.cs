@@ -76,7 +76,7 @@
             this.exitLable.AutoSize = true;
             this.exitLable.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitLable.ForeColor = System.Drawing.Color.DimGray;
-            this.exitLable.Location = new System.Drawing.Point(826, 31);
+            this.exitLable.Location = new System.Drawing.Point(825, 31);
             this.exitLable.Name = "exitLable";
             this.exitLable.Size = new System.Drawing.Size(72, 24);
             this.exitLable.TabIndex = 2;
@@ -107,7 +107,7 @@
             this.panel1.Controls.Add(this.exitLable);
             this.panel1.Location = new System.Drawing.Point(318, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(921, 81);
+            this.panel1.Size = new System.Drawing.Size(920, 81);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -295,7 +295,7 @@
             this.MainGridView.RowHeadersWidth = 62;
             this.MainGridView.RowTemplate.Height = 28;
             this.MainGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.MainGridView.Size = new System.Drawing.Size(871, 500);
+            this.MainGridView.Size = new System.Drawing.Size(870, 500);
             this.MainGridView.TabIndex = 2;
             // 
             // UserStoryForm
@@ -304,10 +304,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1239, 624);
+            this.ClientSize = new System.Drawing.Size(1238, 624);
             this.Controls.Add(this.MainGridView);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "UserStoryForm";
             this.Text = "Формуляр";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);

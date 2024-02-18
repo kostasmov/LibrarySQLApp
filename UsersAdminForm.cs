@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,65 @@ namespace LibrarySQLApp
             {
                 adminPanel.Hide();
             }
+
+            CreateGridView();
+            LoadGridView();
+        }
+
+
+        private void CreateGridView()
+        {
+            MainGridView.Columns.Add("login", "Логин");
+            MainGridView.Columns.Add("name", "Имя");
+            MainGridView.Columns.Add("role", "Роль");
+            MainGridView.Columns.Add("group_code", "Группа");
+            MainGridView.Columns.Add("email", "Почта");
+            MainGridView.Columns.Add("phone", "Телефон");
+        }
+
+        private void FillGridRow(DataGridView dgv, IDataRecord record)
+        {
+            dgv.Rows.Add(
+                record.GetString(0),
+                record.GetString(1) + " " + record.GetString(2),
+                record.GetString(3),
+                record.IsDBNull(4) ? "-" : record.GetString(4),
+                record.IsDBNull(5) ? "-" : record.GetString(5),
+                record.IsDBNull(6) ? "-" : record.GetString(6));
+        }
+
+        private void LoadGridView()
+        {
+            MainGridView.Rows.Clear();
+
+            DataTable dataTable = new DataTable();
+
+            string query = "" +
+               "select login, first_name, last_name, role, group_code, email, phone " +
+               "from accounts join readers on " +
+               "accounts.reader_id = readers.id;";
+
+            DB.openConnection();
+
+            NpgsqlCommand command = new NpgsqlCommand(query, DB.getConnection());
+            NpgsqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                FillGridRow(MainGridView, reader);
+            }
+
+            DB.closeConnection();
+
+            MainGridView.Sort(MainGridView.Columns["name"], ListSortDirection.Ascending);
+
+            foreach (DataGridViewColumn column in MainGridView.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            }
+
+            MainGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void exitLable_Click(object sender, EventArgs e)
@@ -104,6 +164,59 @@ namespace LibrarySQLApp
         private void reportPageButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (SearchBox.Text.Length > 0)
+            {
+                MainGridView.Rows.Clear();
+
+                DataTable dataTable = new DataTable();
+
+                string query = $"SELECT login, first_name, last_name, role, group_code, email, phone " +
+                    "FROM accounts JOIN readers " +
+                    "ON accounts.reader_id = readers.id " +
+                    "WHERE accounts.login LIKE '%" + SearchBox.Text + "%' " +
+                    "OR accounts.role LIKE '%" + SearchBox.Text + "%' " +
+                    "OR readers.first_name LIKE '%" + SearchBox.Text + "%' " +
+                    "OR readers.last_name LIKE '%" + SearchBox.Text + "%' " +
+                    "OR readers.group_code LIKE '%" + SearchBox.Text + "%' " +
+                    "OR readers.email LIKE '%" + SearchBox.Text + "%' " +
+                    "OR readers.phone LIKE '%" + SearchBox.Text + "%'";
+
+                DB.openConnection();
+
+                NpgsqlCommand command = new NpgsqlCommand(query, DB.getConnection());
+                NpgsqlDataReader reader = command.ExecuteReader();
+                command.Parameters.AddWithValue("@text", SearchBox.Text);
+
+                while (reader.Read())
+                {
+                    FillGridRow(MainGridView, reader);
+                }
+
+                DB.closeConnection();
+
+                MainGridView.Sort(MainGridView.Columns["name"], ListSortDirection.Ascending);
+
+                foreach (DataGridViewColumn column in MainGridView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                }
+
+                MainGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            else
+            {
+                LoadGridView();
+            }
         }
     }
 }
