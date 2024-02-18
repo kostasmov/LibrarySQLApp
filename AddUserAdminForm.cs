@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace LibrarySQLApp
 {
-    public partial class UsersAdminForm : Form
+    public partial class AddUserAdminForm : Form
     {
         User User { get; set; }
 
         public bool isClosedByCode = false;
 
-        public UsersAdminForm(User user)
+        public AddUserAdminForm(User user)
         {
             this.User = user;
 
@@ -31,12 +31,12 @@ namespace LibrarySQLApp
                 adminPanel.Hide();
             }
 
-            CreateGridView();
-            LoadGridView();
+            //CreateGridView();
+            //LoadGridView();
         }
 
 
-        private void CreateGridView()
+        /*private void CreateGridView()
         {
             MainGridView.Columns.Add("login", "Логин");
             MainGridView.Columns.Add("name", "Имя");
@@ -57,7 +57,7 @@ namespace LibrarySQLApp
                 record.IsDBNull(6) ? "-" : record.GetString(6));
         }
 
-        public void LoadGridView()
+        private void LoadGridView()
         {
             MainGridView.Rows.Clear();
 
@@ -89,7 +89,7 @@ namespace LibrarySQLApp
             }
 
             MainGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
+        }*/
 
         private void exitLable_Click(object sender, EventArgs e)
         {
@@ -166,61 +166,136 @@ namespace LibrarySQLApp
 
         }
 
-        private void SearchBox_TextChanged(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (SearchBox.Text.Length > 0)
+            String login = loginTextBox.Text;
+            String pass = passTextBox.Text;
+            String first_name = fnameTextBox.Text;
+            String last_name = lnameTextBox.Text;
+            String role = roleComboBox.Text;
+            String group = groupTextBox.Text;
+
+            if (string.IsNullOrWhiteSpace(login) ||
+                string.IsNullOrWhiteSpace(pass) ||
+                string.IsNullOrWhiteSpace(first_name) || 
+                string.IsNullOrWhiteSpace(last_name) || 
+                string.IsNullOrWhiteSpace(role))
             {
-                MainGridView.Rows.Clear();
-
-                DataTable dataTable = new DataTable();
-
-                string query = $"SELECT login, first_name, last_name, role, group_code, email, phone " +
-                    "FROM accounts JOIN readers " +
-                    "ON accounts.reader_id = readers.id " +
-                    "WHERE accounts.login LIKE '%" + SearchBox.Text + "%' " +
-                    "OR accounts.role LIKE '%" + SearchBox.Text + "%' " +
-                    "OR readers.first_name LIKE '%" + SearchBox.Text + "%' " +
-                    "OR readers.last_name LIKE '%" + SearchBox.Text + "%' " +
-                    "OR readers.group_code LIKE '%" + SearchBox.Text + "%' " +
-                    "OR readers.email LIKE '%" + SearchBox.Text + "%' " +
-                    "OR readers.phone LIKE '%" + SearchBox.Text + "%'";
-
-                DB.openConnection();
-
-                NpgsqlCommand command = new NpgsqlCommand(query, DB.getConnection());
-                NpgsqlDataReader reader = command.ExecuteReader();
-                command.Parameters.AddWithValue("@text", SearchBox.Text);
-
-                while (reader.Read())
-                {
-                    FillGridRow(MainGridView, reader);
-                }
-
-                DB.closeConnection();
-
-                MainGridView.Sort(MainGridView.Columns["name"], ListSortDirection.Ascending);
-
-                foreach (DataGridViewColumn column in MainGridView.Columns)
-                {
-                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                }
-
-                MainGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                Messages.DisplayErrorMessage("Заполните все поля");
+                return;
             }
-            else
+
+            String readersQuery =
+                "insert into readers (first_name, last_name, group_code, email, phone) " + 
+                "values (@first_name, @last_name, @group, null, null);";
+
+            String accountsQuery =
+                "insert into accounts (login, password, role, reader_id) " +
+                "values (@login, @pass, @role, @id);";
+
+            NpgsqlTransaction transaction = null;
+
+            try
             {
-                LoadGridView();
+                DB.openConnection();
+                transaction = DB.getConnection().BeginTransaction();
+
+                NpgsqlCommand command = new NpgsqlCommand();
+                command.Connection = DB.getConnection();
+                command.Transaction = transaction;
+
+                
+                command.CommandText = readersQuery;
+                command.Parameters.AddWithValue("@first_name", first_name);
+                command.Parameters.AddWithValue("@last_name", last_name);
+
+                if (string.IsNullOrEmpty(group))
+                {
+                    command.Parameters.AddWithValue("@group", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@group", group);
+                }
+
+                command.ExecuteNonQuery();
+
+                command.CommandText = "select lastval();";
+                int newUserID = Convert.ToInt32(command.ExecuteScalar());
+
+                command.CommandText = accountsQuery;
+                command.Parameters.AddWithValue("@login", login);
+                command.Parameters.AddWithValue("@pass", pass);
+                command.Parameters.AddWithValue("@role", role);
+                command.Parameters.AddWithValue("@id", newUserID);
+                command.ExecuteNonQuery();
+
+                transaction.Commit();
+                Messages.DisplayInfoMessage("Пользователь добавлен");
+
+                Navigation.UsersAdminForm.LoadGridView();
+
+                loginTextBox.Text = "";
+                passTextBox.Text = "";
+                fnameTextBox.Text = "";
+                lnameTextBox.Text = "";
+                groupTextBox.Text = "";
+            }
+            catch (Exception ex)
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                }
+                Messages.DisplayErrorMessage($"Ошибка: {ex.Message}");
+            }
+            finally
+            {
+                if (transaction != null)
+                {
+                    transaction.Dispose();
+                }
+                DB.closeConnection();
             }
         }
 
-        private void AddUserButton_Click(object sender, EventArgs e)
+        private void getBack_Click(object sender, EventArgs e)
         {
-            AddUserAdminForm AddUserForm = new AddUserAdminForm(User);
-            this.Hide();
+            String login = loginTextBox.Text;
+            String pass = passTextBox.Text;
+            String first_name = fnameTextBox.Text;
+            String last_name = lnameTextBox.Text;
+            String group = groupTextBox.Text;
 
-            AddUserForm.Show();
-            AddUserForm.Location = this.Location;
+            if (!string.IsNullOrWhiteSpace(login) ||
+                !string.IsNullOrWhiteSpace(pass) ||
+                !string.IsNullOrWhiteSpace(first_name) ||
+                !string.IsNullOrWhiteSpace(last_name) ||
+                !string.IsNullOrWhiteSpace(group))
+            {
+                DialogResult result = Messages.DisplayQuestionMessage("При выходе данные не сохранятся. Продолжить?");
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+
+            isClosedByCode = true;
+            this.Close();
+
+            Navigation.UsersAdminForm.Show();
+            Navigation.UsersAdminForm.Location = this.Location;
+        }
+
+        private void getBack_MouseEnter(object sender, EventArgs e)
+        {
+            getBack.BackColor = Color.LightGray;
+        }
+
+        private void getBack_MouseLeave(object sender, EventArgs e)
+        {
+            getBack.BackColor = SystemColors.Control;
         }
     }
 }
