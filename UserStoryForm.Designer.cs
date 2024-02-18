@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.profilePageButton = new System.Windows.Forms.Button();
             this.exitLable = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -73,7 +76,7 @@
             this.exitLable.AutoSize = true;
             this.exitLable.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitLable.ForeColor = System.Drawing.Color.DimGray;
-            this.exitLable.Location = new System.Drawing.Point(765, 31);
+            this.exitLable.Location = new System.Drawing.Point(826, 31);
             this.exitLable.Name = "exitLable";
             this.exitLable.Size = new System.Drawing.Size(72, 24);
             this.exitLable.TabIndex = 2;
@@ -104,7 +107,7 @@
             this.panel1.Controls.Add(this.exitLable);
             this.panel1.Location = new System.Drawing.Point(318, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(860, 81);
+            this.panel1.Size = new System.Drawing.Size(921, 81);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -263,13 +266,36 @@
             // 
             this.MainGridView.AllowUserToAddRows = false;
             this.MainGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.MainGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.MainGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MainGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MainGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.MainGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MainGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.MainGridView.Location = new System.Drawing.Point(345, 106);
             this.MainGridView.Name = "MainGridView";
             this.MainGridView.ReadOnly = true;
             this.MainGridView.RowHeadersWidth = 62;
             this.MainGridView.RowTemplate.Height = 28;
-            this.MainGridView.Size = new System.Drawing.Size(810, 500);
+            this.MainGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.MainGridView.Size = new System.Drawing.Size(871, 500);
             this.MainGridView.TabIndex = 2;
             // 
             // UserStoryForm
@@ -278,7 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1178, 624);
+            this.ClientSize = new System.Drawing.Size(1239, 624);
             this.Controls.Add(this.MainGridView);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.panel1);

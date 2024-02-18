@@ -44,14 +44,33 @@ namespace LibrarySQLApp
             MainGridView.Columns.Add("status", "Состояние");
         }
 
+        private enum Status
+        {
+            Pending,
+            Issued,
+            Returned,
+            Rejected
+        }
+
         private void FillGridRow(DataGridView dgv, IDataRecord record)
         {
+            Dictionary<Status, string> statusMappings = new Dictionary<Status, string>()
+            {
+                { Status.Pending, "На рассмотрении" },
+                { Status.Issued, "Выдана" },
+                { Status.Returned, "Возвращена" },
+                { Status.Rejected, "Отказано" },
+            };
+
+            Status status = (Status)Enum.Parse(typeof(Status), record.GetString(5), true);
+            string statusText = statusMappings[status];
+
             dgv.Rows.Add(
                 record.GetString(0),
                 record.GetString(1) + " " + record.GetString(2),
-                record.IsDBNull(3) ? string.Empty : record.GetDateTime(3).Date.ToString("d"),
-                record.IsDBNull(4) ? string.Empty : record.GetDateTime(4).Date.ToString("d"),
-                record.GetString(5));
+                record.IsDBNull(3) ? "-" : record.GetDateTime(3).Date.ToString("d"),
+                record.IsDBNull(4) ? "-": record.GetDateTime(4).Date.ToString("d"),
+                statusText);
         }
 
         private void LoadGridView()

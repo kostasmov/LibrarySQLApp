@@ -238,10 +238,12 @@ namespace LibrarySQLApp
                     Messages.DisplayInfoMessage("Пароль успешно изменён");
                     DB.closeConnection();
 
-                    PassChangeButton.Enabled = false;
-                    PassChangeButton.BackColor = Color.LightGray;
+                    User.Password = newPassTextBox.Text;
                     newPassTextBox.Text = "";
                     oldPassTextBox.Text = "";
+
+                    PassChangeButton.Enabled = false;
+                    PassChangeButton.BackColor = Color.LightGray;
                 }
                 catch (Exception ex)
                 {
