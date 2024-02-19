@@ -97,6 +97,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlterBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlterBookForm.Designer.cs">
+      <DependentUpon>AlterBookForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -152,6 +158,9 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlterBookForm.resx">
+      <DependentUpon>AlterBookForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

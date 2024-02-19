@@ -24,11 +24,6 @@ namespace LibrarySQLApp
 
             nameLabel.Text = User.FullName;
             roleLabel.Text = User.Role;            
-
-            if (User.Role != "admin")
-            {
-                adminPanel.Hide();
-            }
         }
 
         private void exitLable_Click(object sender, EventArgs e)

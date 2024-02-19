@@ -26,11 +26,6 @@ namespace LibrarySQLApp
             nameLabel.Text = User.FullName;
             roleLabel.Text = User.Role;            
 
-            if (User.Role != "admin")
-            {
-                adminPanel.Hide();
-            }
-
             CreateGridView();
             LoadGridView();
             PrintAuthors();
@@ -55,7 +50,7 @@ namespace LibrarySQLApp
                 record.GetString(0),
                 record.GetString(1),
                 record.GetInt32(2),
-                (record.GetString(3) == "fiction") ? "худ." : "науч.",
+                record.GetString(3),
                 record.GetInt32(4),
                 record.GetInt32(5),
                 record.GetInt32(6));
@@ -277,7 +272,12 @@ namespace LibrarySQLApp
             }
 
             DataGridViewRow row = MainGridView.Rows[MainGridView.CurrentCell.RowIndex];
-            Messages.DisplayInfoMessage(row.Cells[0].Value.ToString());
+
+            this.Hide();
+
+            AlterBookForm AlterBookForm = new AlterBookForm(User, row);
+            AlterBookForm.Show();
+            AlterBookForm.Location = this.Location;
         }
     }
 }

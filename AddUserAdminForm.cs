@@ -25,75 +25,12 @@ namespace LibrarySQLApp
 
             nameLabel.Text = User.FullName;
             roleLabel.Text = User.Role;            
-
-            if (User.Role != "admin")
-            {
-                adminPanel.Hide();
-            }
-
-            //CreateGridView();
-            //LoadGridView();
         }
-
-
-        /*private void CreateGridView()
-        {
-            MainGridView.Columns.Add("login", "Логин");
-            MainGridView.Columns.Add("name", "Имя");
-            MainGridView.Columns.Add("role", "Роль");
-            MainGridView.Columns.Add("group_code", "Группа");
-            MainGridView.Columns.Add("email", "Почта");
-            MainGridView.Columns.Add("phone", "Телефон");
-        }
-
-        private void FillGridRow(DataGridView dgv, IDataRecord record)
-        {
-            dgv.Rows.Add(
-                record.GetString(0),
-                record.GetString(1) + " " + record.GetString(2),
-                record.GetString(3),
-                record.IsDBNull(4) ? "-" : record.GetString(4),
-                record.IsDBNull(5) ? "-" : record.GetString(5),
-                record.IsDBNull(6) ? "-" : record.GetString(6));
-        }
-
-        private void LoadGridView()
-        {
-            MainGridView.Rows.Clear();
-
-            DataTable dataTable = new DataTable();
-
-            string query = "" +
-               "select login, first_name, last_name, role, group_code, email, phone " +
-               "from accounts join readers on " +
-               "accounts.reader_id = readers.id;";
-
-            DB.openConnection();
-
-            NpgsqlCommand command = new NpgsqlCommand(query, DB.getConnection());
-            NpgsqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                FillGridRow(MainGridView, reader);
-            }
-
-            DB.closeConnection();
-
-            MainGridView.Sort(MainGridView.Columns["name"], ListSortDirection.Ascending);
-
-            foreach (DataGridViewColumn column in MainGridView.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            }
-
-            MainGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }*/
 
         private void exitLable_Click(object sender, EventArgs e)
         {
             isClosedByCode = true;
+            this.Close();
             Navigation.CloseUI();
             if (User.Role == "admin") Navigation.CloseAdmin();
 
@@ -117,53 +54,6 @@ namespace LibrarySQLApp
             {
                 Application.Exit();
             }
-        }
-
-        private void profilePageButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Navigation.UserForm.Show();
-            Navigation.UserForm.Location = this.Location;
-        }
-
-        private void booksPageButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Navigation.BooksForm.Show();
-            Navigation.BooksForm.Location = this.Location;
-        }
-
-        private void userStoryPageButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Navigation.UserStoryForm.Show();
-            Navigation.UserStoryForm.Location = this.Location;
-        }
-
-        private void usersAdminPageButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Navigation.UsersAdminForm.Show();
-            Navigation.UsersAdminForm.Location = this.Location;
-        }
-
-        private void booksAdminPageButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Navigation.BooksAdminForm.Show();
-            Navigation.BooksAdminForm.Location = this.Location;
-        }
-
-        private void issuancePageButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Navigation.IssuanceAdminForm.Show();
-            Navigation.IssuanceAdminForm.Location = this.Location;
-        }
-
-        private void reportPageButton_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void SaveButton_Click(object sender, EventArgs e)

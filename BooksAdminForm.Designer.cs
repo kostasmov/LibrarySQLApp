@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BooksAdminForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.profilePageButton = new System.Windows.Forms.Button();
             this.exitLable = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@
             this.exitLable.AutoSize = true;
             this.exitLable.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitLable.ForeColor = System.Drawing.Color.DimGray;
-            this.exitLable.Location = new System.Drawing.Point(858, 31);
+            this.exitLable.Location = new System.Drawing.Point(855, 31);
             this.exitLable.Name = "exitLable";
             this.exitLable.Size = new System.Drawing.Size(72, 24);
             this.exitLable.TabIndex = 2;
@@ -115,7 +115,7 @@
             this.panel1.Controls.Add(this.exitLable);
             this.panel1.Location = new System.Drawing.Point(318, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(979, 81);
+            this.panel1.Size = new System.Drawing.Size(976, 81);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -299,7 +299,7 @@
             this.ChangeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChangeButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChangeButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.ChangeButton.Location = new System.Drawing.Point(1037, 106);
+            this.ChangeButton.Location = new System.Drawing.Point(1036, 106);
             this.ChangeButton.Name = "ChangeButton";
             this.ChangeButton.Size = new System.Drawing.Size(211, 36);
             this.ChangeButton.TabIndex = 12;
@@ -312,29 +312,29 @@
             this.MainGridView.AllowUserToAddRows = false;
             this.MainGridView.AllowUserToDeleteRows = false;
             this.MainGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 8F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.MainGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.MainGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.MainGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.MainGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MainGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MainGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.MainGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MainGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MainGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.MainGridView.Location = new System.Drawing.Point(345, 166);
             this.MainGridView.Name = "MainGridView";
             this.MainGridView.ReadOnly = true;
@@ -354,7 +354,7 @@
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.AddButton.Location = new System.Drawing.Point(811, 106);
+            this.AddButton.Location = new System.Drawing.Point(810, 106);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(211, 36);
             this.AddButton.TabIndex = 15;
@@ -388,7 +388,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1271, 624);
+            this.ClientSize = new System.Drawing.Size(1268, 624);
             this.Controls.Add(this.authorsList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddButton);

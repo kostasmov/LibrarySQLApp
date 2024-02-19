@@ -26,11 +26,6 @@ namespace LibrarySQLApp
             nameLabel.Text = User.FullName;
             roleLabel.Text = User.Role;            
 
-            if (User.Role != "admin")
-            {
-                adminPanel.Hide();
-            }
-
             CreateGridView();
             LoadGridView();
         }
