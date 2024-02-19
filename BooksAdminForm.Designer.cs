@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BooksAdminForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.profilePageButton = new System.Windows.Forms.Button();
             this.exitLable = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -51,6 +51,8 @@
             this.ChangeButton = new System.Windows.Forms.Button();
             this.MainGridView = new System.Windows.Forms.DataGridView();
             this.AddButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.authorsList = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
@@ -113,7 +115,7 @@
             this.panel1.Controls.Add(this.exitLable);
             this.panel1.Location = new System.Drawing.Point(318, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(953, 81);
+            this.panel1.Size = new System.Drawing.Size(979, 81);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -286,6 +288,7 @@
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(344, 36);
             this.SearchBox.TabIndex = 13;
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
             // 
             // ChangeButton
             // 
@@ -302,42 +305,45 @@
             this.ChangeButton.TabIndex = 12;
             this.ChangeButton.Text = "Изменить";
             this.ChangeButton.UseVisualStyleBackColor = false;
+            this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
             // MainGridView
             // 
             this.MainGridView.AllowUserToAddRows = false;
             this.MainGridView.AllowUserToDeleteRows = false;
             this.MainGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.MainGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 8F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.MainGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.MainGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.MainGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MainGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MainGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.MainGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MainGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MainGridView.DefaultCellStyle = dataGridViewCellStyle9;
             this.MainGridView.Location = new System.Drawing.Point(345, 166);
             this.MainGridView.Name = "MainGridView";
             this.MainGridView.ReadOnly = true;
             this.MainGridView.RowHeadersWidth = 62;
             this.MainGridView.RowTemplate.Height = 28;
+            this.MainGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.MainGridView.Size = new System.Drawing.Size(903, 389);
             this.MainGridView.TabIndex = 11;
+            this.MainGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MainGridView_CellClick);
             // 
             // AddButton
             // 
@@ -348,12 +354,33 @@
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.AddButton.Location = new System.Drawing.Point(805, 106);
+            this.AddButton.Location = new System.Drawing.Point(811, 106);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(211, 36);
             this.AddButton.TabIndex = 15;
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(341, 573);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 24);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Авторы:";
+            // 
+            // authorsList
+            // 
+            this.authorsList.AutoSize = true;
+            this.authorsList.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.authorsList.Location = new System.Drawing.Point(436, 573);
+            this.authorsList.Name = "authorsList";
+            this.authorsList.Size = new System.Drawing.Size(160, 24);
+            this.authorsList.TabIndex = 17;
+            this.authorsList.Text = "Список авторов";
             // 
             // BooksAdminForm
             // 
@@ -362,6 +389,8 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1271, 624);
+            this.Controls.Add(this.authorsList);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.SearchBox);
@@ -407,5 +436,7 @@
         private System.Windows.Forms.Button ChangeButton;
         private System.Windows.Forms.DataGridView MainGridView;
         private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label authorsList;
     }
 }

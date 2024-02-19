@@ -33,57 +33,32 @@ namespace LibrarySQLApp
 
             CreateGridView();
             LoadGridView();
+            PrintAuthors();
         }
 
         private void CreateGridView()
         {
             MainGridView.Columns.Add("title", "Название");
-            //MainGridView.Columns.Add("author", "Автор");
             MainGridView.Columns.Add("publisher", "Издатель");
             MainGridView.Columns.Add("year", "Год");
             MainGridView.Columns.Add("type", "Тип");
             MainGridView.Columns.Add("amount", "Всего");
             MainGridView.Columns.Add("issued", "Выдано");
+            MainGridView.Columns.Add("id", String.Empty);
+
+            MainGridView.Columns["id"].Visible = false;
         }
 
         private void FillGridRow(DataGridView dgv, IDataRecord record)
         {
-            /*string query = "" + 
-                "select first_name, last_name from authors " + 
-                "join book_authors as ba on ba.author_id = authors.id " + 
-                "join books on books.id = ba.book_id " + 
-                "where books.id = @id;";
-
-            List<string> authors = new List<string>();
-
-            NpgsqlCommand command1 = new NpgsqlCommand(query, DB.getConnection());
-            command1.Parameters.AddWithValue("@id", record.GetInt32(6));
-            NpgsqlDataReader reader = command1.ExecuteReader();
-            
-            while (reader.Read())
-            {
-                authors.Add(reader.GetString(0) + " " + reader.GetString(1));
-            }
-
-            string authorText = "";
-
-            if (authors.Count == 1)
-            {
-                authorText = authors[0];
-            }
-            else if (authors.Count > 1)
-            {
-                authorText = authors[0] + " и др.";
-            }*/
-
             dgv.Rows.Add(
                 record.GetString(0),
-                //authorText,
                 record.GetString(1),
                 record.GetInt32(2),
                 (record.GetString(3) == "fiction") ? "худ." : "науч.",
                 record.GetInt32(4),
-                record.GetInt32(5));
+                record.GetInt32(5),
+                record.GetInt32(6));
         }
 
         public void LoadGridView()
@@ -189,6 +164,120 @@ namespace LibrarySQLApp
             Navigation.IssuanceAdminForm.Location = this.Location;
         }
 
+        private void MainGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PrintAuthors();
+        }
 
+        public void PrintAuthors()
+        {
+            DataGridViewRow row;
+
+            if (MainGridView.CurrentCell != null)
+            {
+                row = MainGridView.Rows[MainGridView.CurrentCell.RowIndex];
+            }
+            else
+            {
+                row = MainGridView.Rows[0];
+            }
+
+            string query = "" +
+                "select first_name, last_name from authors " +
+                "join book_author as ba on ba.author_id = authors.id " +
+                "join books on books.id = ba.book_id " +
+                "where books.id = @id";
+
+            List<string> authors = new List<string>();
+
+            DB.openConnection();
+
+            NpgsqlCommand command = new NpgsqlCommand(query, DB.getConnection());
+            command.Parameters.AddWithValue("@id", (int)row.Cells[6].Value);
+            NpgsqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                authors.Add(reader.GetString(0) + " " + reader.GetString(1));
+            }
+
+            DB.closeConnection();
+
+            authorsList.Text = string.Join(", ", authors);
+        }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (SearchBox.Text.Length <= 0)
+            {
+                LoadGridView();
+                PrintAuthors();
+                return;
+            }
+
+            MainGridView.Rows.Clear();
+
+            DataTable dataTable = new DataTable();
+
+            string query =
+                "select distinct b.title, publisher, book_year, " +
+                "type, amount, issued_amount, b.id " +
+                "from books as b " +
+                "join book_author as ban on b.id = ban.book_id " +
+                "join authors as a on ban.author_id = a.id " +
+                "join books_amount as bam on b.id = bam.id " +
+                "where b.title like '%" + SearchBox.Text + "%' or " +
+                "b.publisher like '%" + SearchBox.Text + "%' or " +
+                "a.first_name like '%" + SearchBox.Text + "%' or " +
+                "a.last_name like '%" + SearchBox.Text + "%';";
+
+            DB.openConnection();
+
+            NpgsqlCommand command = new NpgsqlCommand(query, DB.getConnection());
+            NpgsqlDataReader reader = command.ExecuteReader();
+            command.Parameters.AddWithValue("@text", SearchBox.Text);
+
+            while (reader.Read())
+            {
+                FillGridRow(MainGridView, reader);
+            }
+
+            DB.closeConnection();
+
+            MainGridView.Sort(MainGridView.Columns["title"], ListSortDirection.Ascending);
+
+            foreach (DataGridViewColumn column in MainGridView.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            }
+
+            MainGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            if (MainGridView.CurrentCell != null)
+            {
+                PrintAuthors();
+                return;
+            }
+
+            authorsList.Text = "выберите книгу";
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChangeButton_Click(object sender, EventArgs e)
+        {
+            if (MainGridView.CurrentCell == null) 
+            {
+                Messages.DisplayErrorMessage("Выберите книгу для изменения");
+                return; 
+            }
+
+            DataGridViewRow row = MainGridView.Rows[MainGridView.CurrentCell.RowIndex];
+            Messages.DisplayInfoMessage(row.Cells[0].Value.ToString());
+        }
     }
 }
