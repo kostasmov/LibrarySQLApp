@@ -113,7 +113,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(27, 26);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(371, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(713, 32);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // roleLabel
