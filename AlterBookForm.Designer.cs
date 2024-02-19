@@ -58,7 +58,7 @@
             this.firstNameBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.secondNameBox = new System.Windows.Forms.TextBox();
+            this.lastNameBox = new System.Windows.Forms.TextBox();
             this.addAuthorButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.authorsList = new System.Windows.Forms.Label();
@@ -437,14 +437,14 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Фамилия:";
             // 
-            // secondNameBox
+            // lastNameBox
             // 
-            this.secondNameBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.secondNameBox.Location = new System.Drawing.Point(971, 355);
-            this.secondNameBox.MaxLength = 12;
-            this.secondNameBox.Name = "secondNameBox";
-            this.secondNameBox.Size = new System.Drawing.Size(206, 32);
-            this.secondNameBox.TabIndex = 26;
+            this.lastNameBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lastNameBox.Location = new System.Drawing.Point(971, 355);
+            this.lastNameBox.MaxLength = 12;
+            this.lastNameBox.Name = "lastNameBox";
+            this.lastNameBox.Size = new System.Drawing.Size(206, 32);
+            this.lastNameBox.TabIndex = 26;
             // 
             // addAuthorButton
             // 
@@ -493,7 +493,7 @@
             this.Controls.Add(this.authorsList);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.addAuthorButton);
-            this.Controls.Add(this.secondNameBox);
+            this.Controls.Add(this.lastNameBox);
             this.Controls.Add(this.firstNameBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
@@ -559,7 +559,7 @@
         private System.Windows.Forms.TextBox firstNameBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox secondNameBox;
+        private System.Windows.Forms.TextBox lastNameBox;
         private System.Windows.Forms.Button addAuthorButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label authorsList;

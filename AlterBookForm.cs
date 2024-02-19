@@ -1,10 +1,12 @@
 ﻿using Npgsql;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -181,7 +183,72 @@ namespace LibrarySQLApp
 
         private void addAuthorButton_Click(object sender, EventArgs e)
         {
+            String first_name = firstNameBox.Text;
+            String last_name = lastNameBox.Text;
 
+            String authorsQuery =
+                "insert into authors (first_name, last_name) " +
+                "select @fname, @lname where not exists " +
+                "(select 1 from authors " +
+                "where first_name = @fname and " +
+                "last_name = @lname);";
+
+            String searchQuery =
+                "select id from authors " +
+                "where first_name = @fname and " +
+                "last_name = @lname";
+            
+            String book_authorQuery =
+                "insert into book_author " +
+                "values (@b_id, @a_id)";
+
+            if (string.IsNullOrWhiteSpace(first_name) || 
+                string.IsNullOrWhiteSpace(last_name))
+            {
+                Messages.DisplayErrorMessage("Заполните все поля");
+                return;
+            }
+
+            try
+            {
+                DB.openConnection();
+
+                NpgsqlCommand command = new NpgsqlCommand();
+                command.Connection = DB.getConnection();
+
+                command.CommandText = authorsQuery;
+                command.Parameters.AddWithValue("@fname", first_name);
+                command.Parameters.AddWithValue("@lname", last_name);
+
+                command.ExecuteNonQuery();
+
+                command.CommandText = searchQuery;
+                command.Parameters.AddWithValue("@fname", first_name);
+                command.Parameters.AddWithValue("@lname", last_name);
+
+                int newAuthorID = Convert.ToInt32(command.ExecuteScalar());
+
+                command.CommandText = book_authorQuery;
+                command.Parameters.AddWithValue("@b_id", (int)Row.Cells[6].Value);
+                command.Parameters.AddWithValue("@a_id", newAuthorID);
+
+                command.ExecuteNonQuery();
+                PrintAuthors();
+                Navigation.BooksAdminForm.PrintAuthors();
+
+                firstNameBox.Text = string.Empty;
+                lastNameBox.Text = string.Empty;
+
+                Messages.DisplayInfoMessage("Автор добавлен");
+            }
+            catch (Exception ex)
+            {
+                Messages.DisplayErrorMessage($"Ошибка: {ex.Message}");
+            }
+            finally
+            {
+                DB.closeConnection();
+            }
         }
     }
 }
