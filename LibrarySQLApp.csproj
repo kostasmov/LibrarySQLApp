@@ -109,6 +109,12 @@
     <Compile Include="AlterBookForm.Designer.cs">
       <DependentUpon>AlterBookForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BooksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BooksForm.Designer.cs">
+      <DependentUpon>BooksForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -122,12 +128,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="BooksForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BooksForm.Designer.cs">
-      <DependentUpon>BooksForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddUserAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +170,9 @@
     <EmbeddedResource Include="AlterBookForm.resx">
       <DependentUpon>AlterBookForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BooksForm.resx">
+      <DependentUpon>BooksForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,9 +186,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="BooksForm.resx">
-      <DependentUpon>BooksForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddUserAdminForm.resx">
       <DependentUpon>AddUserAdminForm.cs</DependentUpon>
     </EmbeddedResource>

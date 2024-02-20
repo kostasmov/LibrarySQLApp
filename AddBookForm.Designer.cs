@@ -348,7 +348,7 @@
             this.titleBox.MaxLength = 20;
             this.titleBox.Multiline = true;
             this.titleBox.Name = "titleBox";
-            this.titleBox.Size = new System.Drawing.Size(608, 67);
+            this.titleBox.Size = new System.Drawing.Size(608, 77);
             this.titleBox.TabIndex = 14;
             // 
             // publisherBox

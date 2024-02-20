@@ -28,7 +28,6 @@ namespace LibrarySQLApp
 
             CreateGridView();
             LoadGridView();
-            PrintAuthors();
         }
 
         private void CreateGridView()
@@ -87,6 +86,8 @@ namespace LibrarySQLApp
             }
 
             MainGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            PrintAuthors();
         }
 
         private void exitLable_Click(object sender, EventArgs e)
@@ -206,7 +207,6 @@ namespace LibrarySQLApp
             if (SearchBox.Text.Length <= 0)
             {
                 LoadGridView();
-                PrintAuthors();
                 return;
             }
 

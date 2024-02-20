@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BooksForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.profilePageButton = new System.Windows.Forms.Button();
             this.exitLable = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -42,10 +46,18 @@
             this.booksAdminPageButton = new System.Windows.Forms.Button();
             this.usersAdminPageButton = new System.Windows.Forms.Button();
             this.userStoryPageButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SearchBox = new System.Windows.Forms.TextBox();
+            this.requestButton = new System.Windows.Forms.Button();
+            this.MainGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.authorsList = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
             this.adminPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // profilePageButton
@@ -71,7 +83,7 @@
             this.exitLable.AutoSize = true;
             this.exitLable.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitLable.ForeColor = System.Drawing.Color.DimGray;
-            this.exitLable.Location = new System.Drawing.Point(765, 31);
+            this.exitLable.Location = new System.Drawing.Point(870, 31);
             this.exitLable.Name = "exitLable";
             this.exitLable.Size = new System.Drawing.Size(72, 24);
             this.exitLable.TabIndex = 2;
@@ -102,7 +114,7 @@
             this.panel1.Controls.Add(this.exitLable);
             this.panel1.Location = new System.Drawing.Point(318, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(860, 81);
+            this.panel1.Size = new System.Drawing.Size(991, 81);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -113,7 +125,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(27, 26);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(713, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(647, 32);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // roleLabel
@@ -168,13 +180,14 @@
             this.adminPanel.Controls.Add(this.booksAdminPageButton);
             this.adminPanel.Controls.Add(this.usersAdminPageButton);
             this.adminPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.adminPanel.Location = new System.Drawing.Point(0, 268);
+            this.adminPanel.Location = new System.Drawing.Point(0, 264);
             this.adminPanel.Name = "adminPanel";
-            this.adminPanel.Size = new System.Drawing.Size(322, 356);
+            this.adminPanel.Size = new System.Drawing.Size(322, 360);
             this.adminPanel.TabIndex = 5;
             // 
             // reportPageButton
             // 
+            this.reportPageButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.reportPageButton.AutoSize = true;
             this.reportPageButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.reportPageButton.FlatAppearance.BorderSize = 0;
@@ -187,10 +200,10 @@
             this.reportPageButton.TabIndex = 7;
             this.reportPageButton.Text = "Отчёты";
             this.reportPageButton.UseVisualStyleBackColor = false;
-            this.reportPageButton.Click += new System.EventHandler(this.reportPageButton_Click);
             // 
             // issuancePageButton
             // 
+            this.issuancePageButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.issuancePageButton.AutoSize = true;
             this.issuancePageButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.issuancePageButton.FlatAppearance.BorderSize = 0;
@@ -207,6 +220,7 @@
             // 
             // booksAdminPageButton
             // 
+            this.booksAdminPageButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.booksAdminPageButton.AutoSize = true;
             this.booksAdminPageButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.booksAdminPageButton.FlatAppearance.BorderSize = 0;
@@ -223,6 +237,7 @@
             // 
             // usersAdminPageButton
             // 
+            this.usersAdminPageButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.usersAdminPageButton.AutoSize = true;
             this.usersAdminPageButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.usersAdminPageButton.FlatAppearance.BorderSize = 0;
@@ -253,17 +268,120 @@
             this.userStoryPageButton.UseVisualStyleBackColor = false;
             this.userStoryPageButton.Click += new System.EventHandler(this.userStoryPageButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(345, 106);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SearchBox.Location = new System.Drawing.Point(389, 106);
+            this.SearchBox.MaxLength = 40;
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(344, 36);
+            this.SearchBox.TabIndex = 13;
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
+            // 
+            // requestButton
+            // 
+            this.requestButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.requestButton.AutoSize = true;
+            this.requestButton.BackColor = System.Drawing.SystemColors.Highlight;
+            this.requestButton.FlatAppearance.BorderSize = 0;
+            this.requestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.requestButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.requestButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.requestButton.Location = new System.Drawing.Point(949, 107);
+            this.requestButton.Name = "requestButton";
+            this.requestButton.Size = new System.Drawing.Size(311, 36);
+            this.requestButton.TabIndex = 12;
+            this.requestButton.Text = "Подать заявку на выдачу";
+            this.requestButton.UseVisualStyleBackColor = false;
+            this.requestButton.Click += new System.EventHandler(this.requestButton_Click);
+            // 
+            // MainGridView
+            // 
+            this.MainGridView.AllowUserToAddRows = false;
+            this.MainGridView.AllowUserToDeleteRows = false;
+            this.MainGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.MainGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.MainGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.MainGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MainGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.MainGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MainGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.MainGridView.Location = new System.Drawing.Point(345, 166);
+            this.MainGridView.Name = "MainGridView";
+            this.MainGridView.ReadOnly = true;
+            this.MainGridView.RowHeadersWidth = 62;
+            this.MainGridView.RowTemplate.Height = 28;
+            this.MainGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.MainGridView.Size = new System.Drawing.Size(915, 389);
+            this.MainGridView.TabIndex = 11;
+            this.MainGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MainGridView_CellClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(341, 573);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 24);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Авторы:";
+            // 
+            // authorsList
+            // 
+            this.authorsList.AutoSize = true;
+            this.authorsList.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.authorsList.Location = new System.Drawing.Point(436, 573);
+            this.authorsList.Name = "authorsList";
+            this.authorsList.Size = new System.Drawing.Size(160, 24);
+            this.authorsList.TabIndex = 17;
+            this.authorsList.Text = "Список авторов";
+            // 
             // BooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1178, 624);
+            this.ClientSize = new System.Drawing.Size(1283, 624);
+            this.Controls.Add(this.authorsList);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.SearchBox);
+            this.Controls.Add(this.requestButton);
+            this.Controls.Add(this.MainGridView);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.panel1);
             this.Name = "BooksForm";
             this.Text = "Библиотека";
+            this.Activated += new System.EventHandler(this.BooksForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -273,7 +391,10 @@
             this.NavigationPanel.PerformLayout();
             this.adminPanel.ResumeLayout(false);
             this.adminPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -292,5 +413,11 @@
         private System.Windows.Forms.Button booksAdminPageButton;
         private System.Windows.Forms.Button issuancePageButton;
         private System.Windows.Forms.Button reportPageButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox SearchBox;
+        private System.Windows.Forms.Button requestButton;
+        private System.Windows.Forms.DataGridView MainGridView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label authorsList;
     }
 }

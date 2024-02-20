@@ -41,7 +41,6 @@
             this.booksPageButton = new System.Windows.Forms.Button();
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.adminPanel = new System.Windows.Forms.Panel();
-            this.reportPageButton = new System.Windows.Forms.Button();
             this.issuancePageButton = new System.Windows.Forms.Button();
             this.booksAdminPageButton = new System.Windows.Forms.Button();
             this.usersAdminPageButton = new System.Windows.Forms.Button();
@@ -53,6 +52,7 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.authorsList = new System.Windows.Forms.Label();
+            this.reportPageButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
@@ -115,7 +115,7 @@
             this.panel1.Controls.Add(this.exitLable);
             this.panel1.Location = new System.Drawing.Point(318, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(976, 81);
+            this.panel1.Size = new System.Drawing.Size(996, 81);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -185,22 +185,6 @@
             this.adminPanel.Name = "adminPanel";
             this.adminPanel.Size = new System.Drawing.Size(322, 360);
             this.adminPanel.TabIndex = 5;
-            // 
-            // reportPageButton
-            // 
-            this.reportPageButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.reportPageButton.AutoSize = true;
-            this.reportPageButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.reportPageButton.FlatAppearance.BorderSize = 0;
-            this.reportPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reportPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.reportPageButton.Location = new System.Drawing.Point(12, 282);
-            this.reportPageButton.Name = "reportPageButton";
-            this.reportPageButton.Size = new System.Drawing.Size(300, 60);
-            this.reportPageButton.TabIndex = 7;
-            this.reportPageButton.Text = "Отчёты";
-            this.reportPageButton.UseVisualStyleBackColor = false;
             // 
             // issuancePageButton
             // 
@@ -299,7 +283,7 @@
             this.ChangeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChangeButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChangeButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.ChangeButton.Location = new System.Drawing.Point(1036, 106);
+            this.ChangeButton.Location = new System.Drawing.Point(1046, 106);
             this.ChangeButton.Name = "ChangeButton";
             this.ChangeButton.Size = new System.Drawing.Size(211, 36);
             this.ChangeButton.TabIndex = 12;
@@ -354,7 +338,7 @@
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.AddButton.Location = new System.Drawing.Point(810, 106);
+            this.AddButton.Location = new System.Drawing.Point(820, 106);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(211, 36);
             this.AddButton.TabIndex = 15;
@@ -381,6 +365,22 @@
             this.authorsList.Size = new System.Drawing.Size(160, 24);
             this.authorsList.TabIndex = 17;
             this.authorsList.Text = "Список авторов";
+            // 
+            // reportPageButton
+            // 
+            this.reportPageButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.reportPageButton.AutoSize = true;
+            this.reportPageButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.reportPageButton.FlatAppearance.BorderSize = 0;
+            this.reportPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.reportPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.reportPageButton.Location = new System.Drawing.Point(12, 282);
+            this.reportPageButton.Name = "reportPageButton";
+            this.reportPageButton.Size = new System.Drawing.Size(300, 60);
+            this.reportPageButton.TabIndex = 7;
+            this.reportPageButton.Text = "Отчёты";
+            this.reportPageButton.UseVisualStyleBackColor = false;
             // 
             // BooksAdminForm
             // 
@@ -430,7 +430,6 @@
         private System.Windows.Forms.Panel adminPanel;
         private System.Windows.Forms.Button booksAdminPageButton;
         private System.Windows.Forms.Button issuancePageButton;
-        private System.Windows.Forms.Button reportPageButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button ChangeButton;
@@ -438,5 +437,6 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label authorsList;
+        private System.Windows.Forms.Button reportPageButton;
     }
 }

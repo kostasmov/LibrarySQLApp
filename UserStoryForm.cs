@@ -38,7 +38,6 @@ namespace LibrarySQLApp
         private void CreateGridView()
         {
             MainGridView.Columns.Add("title", "Книга");
-            MainGridView.Columns.Add("author", "Автор");
             MainGridView.Columns.Add("book_date", "Дата выдачи");
             MainGridView.Columns.Add("return_date", "Дата возврата");
             MainGridView.Columns.Add("status", "Состояние");
@@ -62,30 +61,26 @@ namespace LibrarySQLApp
                 { Status.Rejected, "Отказано" },
             };
 
-            Status status = (Status)Enum.Parse(typeof(Status), record.GetString(5), true);
+            Status status = (Status)Enum.Parse(typeof(Status), record.GetString(3), true);
             string statusText = statusMappings[status];
 
             dgv.Rows.Add(
                 record.GetString(0),
-                record.GetString(1) + " " + record.GetString(2),
-                record.IsDBNull(3) ? "-" : record.GetDateTime(3).Date.ToString("d"),
-                record.IsDBNull(4) ? "-": record.GetDateTime(4).Date.ToString("d"),
+                record.IsDBNull(1) ? "-" : record.GetDateTime(1).Date.ToString("d"),
+                record.IsDBNull(2) ? "-": record.GetDateTime(2).Date.ToString("d"),
                 statusText);
         }
 
-        private void LoadGridView()
+        public void LoadGridView()
         {
             MainGridView.Rows.Clear();
 
             DataTable dataTable = new DataTable();
 
             string query = "" +
-                "SELECT books.title, authors.first_name, authors.last_name, " +
-                "iss.book_date, iss.return_date, iss.status " +
+                "SELECT books.title, iss.book_date, iss.return_date, iss.status " +
                 "FROM issuance as iss " +
                 "join books on iss.book_id = books.id " +
-                "join book_author as ba on ba.book_id = books.id " +
-                "join authors on authors.id = ba.author_id " +
                 "where reader_id=@id;";
 
             DB.openConnection();
@@ -110,7 +105,7 @@ namespace LibrarySQLApp
                 column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             }
 
-            MainGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            MainGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void exitLable_Click(object sender, EventArgs e)
