@@ -260,7 +260,11 @@ namespace LibrarySQLApp
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
+            AddBookForm addBookForm = new AddBookForm(User);
+            addBookForm.Show();
+            addBookForm.Location = this.Location;
         }
 
         private void ChangeButton_Click(object sender, EventArgs e)

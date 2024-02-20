@@ -1,6 +1,6 @@
 ﻿namespace LibrarySQLApp
 {
-    partial class AlterBookForm
+    partial class AddBookForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterBookForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBookForm));
             this.profilePageButton = new System.Windows.Forms.Button();
             this.exitLable = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -55,13 +55,7 @@
             this.amountBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.getBack = new System.Windows.Forms.PictureBox();
-            this.firstNameBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lastNameBox = new System.Windows.Forms.TextBox();
-            this.addAuthorButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.authorsList = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
@@ -287,9 +281,9 @@
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.SaveButton.Location = new System.Drawing.Point(569, 536);
+            this.SaveButton.Location = new System.Drawing.Point(984, 517);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(206, 60);
+            this.SaveButton.Size = new System.Drawing.Size(250, 70);
             this.SaveButton.TabIndex = 8;
             this.SaveButton.Text = "Сохранить";
             this.SaveButton.UseVisualStyleBackColor = false;
@@ -299,7 +293,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(386, 111);
+            this.label1.Location = new System.Drawing.Point(390, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 29);
             this.label1.TabIndex = 9;
@@ -309,7 +303,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(386, 250);
+            this.label2.Location = new System.Drawing.Point(390, 265);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 29);
             this.label2.TabIndex = 10;
@@ -319,7 +313,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(386, 329);
+            this.label3.Location = new System.Drawing.Point(390, 352);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 29);
             this.label3.TabIndex = 11;
@@ -329,7 +323,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(386, 472);
+            this.label4.Location = new System.Drawing.Point(865, 352);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 29);
             this.label4.TabIndex = 12;
@@ -337,58 +331,58 @@
             // 
             // typeBox
             // 
-            this.typeBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.typeBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.typeBox.FormattingEnabled = true;
             this.typeBox.Items.AddRange(new object[] {
             "fiction",
             "technic"});
-            this.typeBox.Location = new System.Drawing.Point(569, 469);
+            this.typeBox.Location = new System.Drawing.Point(968, 344);
             this.typeBox.Name = "typeBox";
-            this.typeBox.Size = new System.Drawing.Size(206, 32);
+            this.typeBox.Size = new System.Drawing.Size(206, 37);
             this.typeBox.TabIndex = 13;
             // 
             // titleBox
             // 
-            this.titleBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.titleBox.Location = new System.Drawing.Point(569, 111);
+            this.titleBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.titleBox.Location = new System.Drawing.Point(573, 136);
             this.titleBox.MaxLength = 20;
             this.titleBox.Multiline = true;
             this.titleBox.Name = "titleBox";
-            this.titleBox.Size = new System.Drawing.Size(608, 55);
+            this.titleBox.Size = new System.Drawing.Size(608, 67);
             this.titleBox.TabIndex = 14;
             // 
             // publisherBox
             // 
-            this.publisherBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.publisherBox.Location = new System.Drawing.Point(569, 250);
+            this.publisherBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.publisherBox.Location = new System.Drawing.Point(573, 258);
             this.publisherBox.MaxLength = 20;
             this.publisherBox.Name = "publisherBox";
-            this.publisherBox.Size = new System.Drawing.Size(206, 32);
+            this.publisherBox.Size = new System.Drawing.Size(608, 36);
             this.publisherBox.TabIndex = 15;
             // 
             // yearBox
             // 
-            this.yearBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.yearBox.Location = new System.Drawing.Point(569, 326);
+            this.yearBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.yearBox.Location = new System.Drawing.Point(573, 345);
             this.yearBox.MaxLength = 12;
             this.yearBox.Name = "yearBox";
-            this.yearBox.Size = new System.Drawing.Size(206, 32);
+            this.yearBox.Size = new System.Drawing.Size(206, 36);
             this.yearBox.TabIndex = 16;
             // 
             // amountBox
             // 
-            this.amountBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.amountBox.Location = new System.Drawing.Point(569, 396);
+            this.amountBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.amountBox.Location = new System.Drawing.Point(573, 435);
             this.amountBox.MaxLength = 20;
             this.amountBox.Name = "amountBox";
-            this.amountBox.Size = new System.Drawing.Size(206, 32);
+            this.amountBox.Size = new System.Drawing.Size(206, 36);
             this.amountBox.TabIndex = 18;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(386, 399);
+            this.label5.Location = new System.Drawing.Point(390, 442);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(166, 29);
             this.label5.TabIndex = 17;
@@ -408,95 +402,25 @@
             this.getBack.MouseEnter += new System.EventHandler(this.getBack_MouseEnter);
             this.getBack.MouseLeave += new System.EventHandler(this.getBack_MouseLeave);
             // 
-            // firstNameBox
-            // 
-            this.firstNameBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.firstNameBox.Location = new System.Drawing.Point(971, 289);
-            this.firstNameBox.MaxLength = 20;
-            this.firstNameBox.Name = "firstNameBox";
-            this.firstNameBox.Size = new System.Drawing.Size(206, 32);
-            this.firstNameBox.TabIndex = 25;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(821, 290);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 29);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Имя: ";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(821, 359);
+            this.label6.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label6.Location = new System.Drawing.Point(341, 582);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 29);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Фамилия:";
+            this.label6.Size = new System.Drawing.Size(515, 24);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Авторов можно указать через окно изменения книги";
             // 
-            // lastNameBox
-            // 
-            this.lastNameBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lastNameBox.Location = new System.Drawing.Point(971, 355);
-            this.lastNameBox.MaxLength = 12;
-            this.lastNameBox.Name = "lastNameBox";
-            this.lastNameBox.Size = new System.Drawing.Size(206, 32);
-            this.lastNameBox.TabIndex = 26;
-            // 
-            // addAuthorButton
-            // 
-            this.addAuthorButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addAuthorButton.AutoSize = true;
-            this.addAuthorButton.BackColor = System.Drawing.SystemColors.Highlight;
-            this.addAuthorButton.FlatAppearance.BorderSize = 0;
-            this.addAuthorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addAuthorButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addAuthorButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.addAuthorButton.Location = new System.Drawing.Point(971, 418);
-            this.addAuthorButton.Name = "addAuthorButton";
-            this.addAuthorButton.Size = new System.Drawing.Size(206, 44);
-            this.addAuthorButton.TabIndex = 27;
-            this.addAuthorButton.Text = "Добавить автора";
-            this.addAuthorButton.UseVisualStyleBackColor = false;
-            this.addAuthorButton.Click += new System.EventHandler(this.addAuthorButton_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(386, 182);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 29);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Авторы:";
-            // 
-            // authorsList
-            // 
-            this.authorsList.AutoSize = true;
-            this.authorsList.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.authorsList.Location = new System.Drawing.Point(565, 186);
-            this.authorsList.Name = "authorsList";
-            this.authorsList.Size = new System.Drawing.Size(160, 24);
-            this.authorsList.TabIndex = 29;
-            this.authorsList.Text = "Список авторов";
-            // 
-            // AlterBookForm
+            // AddBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1268, 624);
-            this.Controls.Add(this.authorsList);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.addAuthorButton);
-            this.Controls.Add(this.lastNameBox);
-            this.Controls.Add(this.firstNameBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.getBack);
             this.Controls.Add(this.amountBox);
             this.Controls.Add(this.label5);
@@ -512,8 +436,8 @@
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "AlterBookForm";
-            this.Text = "Изменение книги";
+            this.Name = "AddBookForm";
+            this.Text = "Добавление книги";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -556,12 +480,6 @@
         private System.Windows.Forms.TextBox amountBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox getBack;
-        private System.Windows.Forms.TextBox firstNameBox;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox lastNameBox;
-        private System.Windows.Forms.Button addAuthorButton;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label authorsList;
     }
 }
