@@ -41,7 +41,6 @@
             this.booksPageButton = new System.Windows.Forms.Button();
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.adminPanel = new System.Windows.Forms.Panel();
-            this.reportPageButton = new System.Windows.Forms.Button();
             this.issuancePageButton = new System.Windows.Forms.Button();
             this.booksAdminPageButton = new System.Windows.Forms.Button();
             this.usersAdminPageButton = new System.Windows.Forms.Button();
@@ -173,7 +172,6 @@
             // adminPanel
             // 
             this.adminPanel.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.adminPanel.Controls.Add(this.reportPageButton);
             this.adminPanel.Controls.Add(this.issuancePageButton);
             this.adminPanel.Controls.Add(this.booksAdminPageButton);
             this.adminPanel.Controls.Add(this.usersAdminPageButton);
@@ -182,23 +180,6 @@
             this.adminPanel.Name = "adminPanel";
             this.adminPanel.Size = new System.Drawing.Size(322, 360);
             this.adminPanel.TabIndex = 5;
-            // 
-            // reportPageButton
-            // 
-            this.reportPageButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.reportPageButton.AutoSize = true;
-            this.reportPageButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.reportPageButton.FlatAppearance.BorderSize = 0;
-            this.reportPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reportPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.reportPageButton.Location = new System.Drawing.Point(12, 282);
-            this.reportPageButton.Name = "reportPageButton";
-            this.reportPageButton.Size = new System.Drawing.Size(300, 60);
-            this.reportPageButton.TabIndex = 7;
-            this.reportPageButton.Text = "Отчёты";
-            this.reportPageButton.UseVisualStyleBackColor = false;
-            this.reportPageButton.Click += new System.EventHandler(this.reportPageButton_Click);
             // 
             // issuancePageButton
             // 
@@ -299,6 +280,7 @@
             this.MainGridView.ReadOnly = true;
             this.MainGridView.RowHeadersWidth = 62;
             this.MainGridView.RowTemplate.Height = 28;
+            this.MainGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.MainGridView.Size = new System.Drawing.Size(860, 440);
             this.MainGridView.TabIndex = 3;
             // 
@@ -386,7 +368,6 @@
         private System.Windows.Forms.Panel adminPanel;
         private System.Windows.Forms.Button booksAdminPageButton;
         private System.Windows.Forms.Button issuancePageButton;
-        private System.Windows.Forms.Button reportPageButton;
         private System.Windows.Forms.DataGridView MainGridView;
         private System.Windows.Forms.Button AddUserButton;
         private System.Windows.Forms.TextBox SearchBox;

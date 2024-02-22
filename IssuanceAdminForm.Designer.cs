@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssuanceAdminForm));
             this.profilePageButton = new System.Windows.Forms.Button();
             this.exitLable = new System.Windows.Forms.Label();
@@ -41,18 +41,17 @@
             this.booksPageButton = new System.Windows.Forms.Button();
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.adminPanel = new System.Windows.Forms.Panel();
-            this.reportPageButton = new System.Windows.Forms.Button();
             this.issuancePageButton = new System.Windows.Forms.Button();
             this.booksAdminPageButton = new System.Windows.Forms.Button();
             this.usersAdminPageButton = new System.Windows.Forms.Button();
             this.userStoryPageButton = new System.Windows.Forms.Button();
             this.MainGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.rejectButton = new System.Windows.Forms.Button();
+            this.issueButton = new System.Windows.Forms.Button();
+            this.fineButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SearchBox = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.returnButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
@@ -176,7 +175,6 @@
             // adminPanel
             // 
             this.adminPanel.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.adminPanel.Controls.Add(this.reportPageButton);
             this.adminPanel.Controls.Add(this.issuancePageButton);
             this.adminPanel.Controls.Add(this.booksAdminPageButton);
             this.adminPanel.Controls.Add(this.usersAdminPageButton);
@@ -185,23 +183,6 @@
             this.adminPanel.Name = "adminPanel";
             this.adminPanel.Size = new System.Drawing.Size(322, 360);
             this.adminPanel.TabIndex = 5;
-            // 
-            // reportPageButton
-            // 
-            this.reportPageButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.reportPageButton.AutoSize = true;
-            this.reportPageButton.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.reportPageButton.FlatAppearance.BorderSize = 0;
-            this.reportPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportPageButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reportPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.reportPageButton.Location = new System.Drawing.Point(12, 282);
-            this.reportPageButton.Name = "reportPageButton";
-            this.reportPageButton.Size = new System.Drawing.Size(300, 60);
-            this.reportPageButton.TabIndex = 7;
-            this.reportPageButton.Text = "Отчёты";
-            this.reportPageButton.UseVisualStyleBackColor = false;
-            this.reportPageButton.Click += new System.EventHandler(this.reportPageButton_Click);
             // 
             // issuancePageButton
             // 
@@ -274,85 +255,95 @@
             // 
             this.MainGridView.AllowUserToAddRows = false;
             this.MainGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.MainGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.MainGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.MainGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.MainGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MainGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MainGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MainGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.MainGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MainGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MainGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.MainGridView.Location = new System.Drawing.Point(345, 155);
+            this.MainGridView.MultiSelect = false;
             this.MainGridView.Name = "MainGridView";
             this.MainGridView.ReadOnly = true;
             this.MainGridView.RowHeadersWidth = 62;
             this.MainGridView.RowTemplate.Height = 28;
             this.MainGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.MainGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.MainGridView.Size = new System.Drawing.Size(923, 385);
             this.MainGridView.TabIndex = 2;
+            this.MainGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MainGridView_CellContentClick);
             // 
-            // button1
+            // rejectButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(1067, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 36);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Отклонить";
-            this.button1.UseVisualStyleBackColor = false;
+            this.rejectButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rejectButton.AutoSize = true;
+            this.rejectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.rejectButton.Enabled = false;
+            this.rejectButton.FlatAppearance.BorderSize = 0;
+            this.rejectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rejectButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rejectButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.rejectButton.Location = new System.Drawing.Point(585, 555);
+            this.rejectButton.Name = "rejectButton";
+            this.rejectButton.Size = new System.Drawing.Size(208, 51);
+            this.rejectButton.TabIndex = 8;
+            this.rejectButton.Text = "Отклонить";
+            this.rejectButton.UseVisualStyleBackColor = false;
+            this.rejectButton.Click += new System.EventHandler(this.rejectButton_Click);
             // 
-            // button2
+            // issueButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(552, 555);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(227, 51);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Выдать";
-            this.button2.UseVisualStyleBackColor = false;
+            this.issueButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.issueButton.AutoSize = true;
+            this.issueButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.issueButton.Enabled = false;
+            this.issueButton.FlatAppearance.BorderSize = 0;
+            this.issueButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.issueButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.issueButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.issueButton.Location = new System.Drawing.Point(345, 555);
+            this.issueButton.Name = "issueButton";
+            this.issueButton.Size = new System.Drawing.Size(208, 51);
+            this.issueButton.TabIndex = 9;
+            this.issueButton.Text = "Выдать";
+            this.issueButton.UseVisualStyleBackColor = false;
+            this.issueButton.Click += new System.EventHandler(this.issueButton_Click);
             // 
-            // button3
+            // fineButton
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(1038, 555);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(227, 51);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Оштрафовать";
-            this.button3.UseVisualStyleBackColor = false;
+            this.fineButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fineButton.AutoSize = true;
+            this.fineButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.fineButton.Enabled = false;
+            this.fineButton.FlatAppearance.BorderSize = 0;
+            this.fineButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fineButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fineButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.fineButton.Location = new System.Drawing.Point(1060, 555);
+            this.fineButton.Name = "fineButton";
+            this.fineButton.Size = new System.Drawing.Size(208, 51);
+            this.fineButton.TabIndex = 10;
+            this.fineButton.Text = "Оштрафовать";
+            this.fineButton.UseVisualStyleBackColor = false;
+            this.fineButton.Click += new System.EventHandler(this.fineButton_Click);
             // 
             // pictureBox1
             // 
@@ -375,21 +366,23 @@
             this.SearchBox.TabIndex = 11;
             this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
             // 
-            // button4
+            // returnButton
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(795, 555);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(227, 51);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Возврат";
-            this.button4.UseVisualStyleBackColor = false;
+            this.returnButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.returnButton.AutoSize = true;
+            this.returnButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.returnButton.Enabled = false;
+            this.returnButton.FlatAppearance.BorderSize = 0;
+            this.returnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.returnButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.returnButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.returnButton.Location = new System.Drawing.Point(823, 555);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(208, 51);
+            this.returnButton.TabIndex = 13;
+            this.returnButton.Text = "Возврат";
+            this.returnButton.UseVisualStyleBackColor = false;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
             // IssuanceAdminForm
             // 
@@ -398,18 +391,19 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1291, 624);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.returnButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.SearchBox);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.fineButton);
+            this.Controls.Add(this.issueButton);
+            this.Controls.Add(this.rejectButton);
             this.Controls.Add(this.MainGridView);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "IssuanceAdminForm";
             this.Text = "История выдач";
+            this.Activated += new System.EventHandler(this.IssuanceAdminForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -440,13 +434,12 @@
         private System.Windows.Forms.Panel adminPanel;
         private System.Windows.Forms.Button booksAdminPageButton;
         private System.Windows.Forms.Button issuancePageButton;
-        private System.Windows.Forms.Button reportPageButton;
         private System.Windows.Forms.DataGridView MainGridView;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button rejectButton;
+        private System.Windows.Forms.Button issueButton;
+        private System.Windows.Forms.Button fineButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox SearchBox;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button returnButton;
     }
 }

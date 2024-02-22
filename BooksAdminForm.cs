@@ -283,5 +283,10 @@ namespace LibrarySQLApp
             AlterBookForm.Show();
             AlterBookForm.Location = this.Location;
         }
+
+        private void BooksAdminForm_Activated(object sender, EventArgs e)
+        {
+            LoadGridView();
+        }
     }
 }
