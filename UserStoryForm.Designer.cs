@@ -293,6 +293,7 @@
             this.MaximizeBox = false;
             this.Name = "UserStoryForm";
             this.Text = "Формуляр пользователя";
+            this.Activated += new System.EventHandler(this.UserStoryForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

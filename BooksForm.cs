@@ -318,7 +318,7 @@ namespace LibrarySQLApp
                 "insert into issuance (book_id, reader_id, status) " + 
                 "select @book_id, @reader_id, 'pending' " + 
                 "where not exists (select 1 from issuance where book_id = " +
-                "@book_id and reader_id = @reader_id);";
+                "@book_id and reader_id = @reader_id and status = 'pending');";
 
             try
             {

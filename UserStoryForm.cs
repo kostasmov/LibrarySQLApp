@@ -177,5 +177,10 @@ namespace LibrarySQLApp
             Navigation.IssuanceAdminForm.Show();
             Navigation.IssuanceAdminForm.Location = this.Location;
         }
+
+        private void UserStoryForm_Activated(object sender, EventArgs e)
+        {
+            LoadGridView();
+        }
     }
 }
