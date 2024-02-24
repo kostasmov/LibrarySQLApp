@@ -170,7 +170,6 @@ namespace LibrarySQLApp
                 }
             }
 
-
             isClosedByCode = true;
             this.Close();
 

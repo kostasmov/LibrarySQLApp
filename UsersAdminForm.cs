@@ -156,11 +156,6 @@ namespace LibrarySQLApp
             Navigation.IssuanceAdminForm.Location = this.Location;
         }
 
-        private void reportPageButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void SearchBox_TextChanged(object sender, EventArgs e)
         {
             if (SearchBox.Text.Length > 0)

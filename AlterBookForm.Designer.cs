@@ -332,7 +332,7 @@
             // 
             this.titleBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.titleBox.Location = new System.Drawing.Point(569, 111);
-            this.titleBox.MaxLength = 20;
+            this.titleBox.MaxLength = 60;
             this.titleBox.Multiline = true;
             this.titleBox.Name = "titleBox";
             this.titleBox.Size = new System.Drawing.Size(608, 55);

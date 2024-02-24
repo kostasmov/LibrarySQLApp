@@ -124,8 +124,6 @@ namespace LibrarySQLApp
                 SaveButton.Enabled = false;
                 SaveButton.BackColor = Color.LightGray;
             }
-            
-
         }
 
         private void loginTextBox_TextChanged(object sender, EventArgs e)

@@ -177,10 +177,5 @@ namespace LibrarySQLApp
             Navigation.IssuanceAdminForm.Show();
             Navigation.IssuanceAdminForm.Location = this.Location;
         }
-
-        private void reportPageButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
